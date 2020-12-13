@@ -17,7 +17,6 @@ namespace ISXConverter
 			MILLION = 1000000,
 			THOUSAND = 1000,
 			HUNDRED = 100,
-			TEN = 10
 		};
 
 		void InitLibrary();
