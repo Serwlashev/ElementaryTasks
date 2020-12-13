@@ -48,24 +48,33 @@ std::string ISXConverter::NumberToTextConverter::Convert(int number)
 {
 	std::string result = "";
 
+	if (number < 0) {
+		result.append("minus");
+		number *= -1;
+	}
+
+	if (number == 0) {
+		return result.append(library.at(number));
+	}
+
 	while (number) {
 		if (number >= BILLION) {
 			result += ConvertFromThreeDigits(number / BILLION);
-			result += " " + library.at(BILLION);
+			result.append(" " + library.at(BILLION));
 			number %= BILLION;
 		}
 		else if (number >= MILLION) {
 			result += ConvertFromThreeDigits(number / MILLION);
-			result += " " + library.at(MILLION);
+			result.append(" " + library.at(MILLION));
 			number %= MILLION;
 		}
 		else if (number >= THOUSAND) {
 			result += ConvertFromThreeDigits(number / THOUSAND);
-			result += " " + library.at(THOUSAND);
+			result.append(" " + library.at(THOUSAND));
 			number %= THOUSAND;
 		}
 		else {
-			result += ConvertFromThreeDigits(number);
+			result.append(ConvertFromThreeDigits(number));
 			number /= THOUSAND;
 		}
 	}
@@ -78,16 +87,16 @@ std::string ISXConverter::NumberToTextConverter::ConvertFromThreeDigits(int numb
 	std::string result = "";
 
 	if (number >= HUNDRED) {
-		result += " " + library.at(number / HUNDRED);
-		result += " " + library.at(HUNDRED);
+		result.append(" " + library.at(number / HUNDRED));
+		result.append(" " + library.at(HUNDRED));
 		number %= HUNDRED;
 	}
 	if (number > 20) {
-		result += " " + library.at((number / 10) * 10);
+		result.append(" " + library.at((number / 10) * 10));
 		number %= 10;
 	}
-	if (number >= 0) {
-		result += " " + library.at(number);
+	if (number >= 1) {
+		result.append(" " + library.at(number));
 	}
 
 	return result;

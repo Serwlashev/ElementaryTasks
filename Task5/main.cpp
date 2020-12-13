@@ -5,7 +5,7 @@
 
 int main() {
 	ISXConverter::NumberToTextConverter converter;
-	std::cout << converter.Convert(1561070565) << "\n";
+	std::cout << converter.Convert(-423002230) << "\n";
 
 
 	system("pause");
