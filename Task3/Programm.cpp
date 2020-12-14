@@ -37,9 +37,6 @@ void ISXProg::Programm::AddNewTriangle()
 
 	if (CanCreateTriangle(name, first_side, second_side, third_side)) {
 		
-		//triangle = std::make_unique<Triangle>(name, first_side, second_side, third_side);
-		//m_triangles_map.insert(std::make_pair(triangle.get()->GetSquare(), triangle.get()));
-		
 		m_triangles.push_back(new Triangle(name, first_side, second_side, third_side));
 	}
 	else {

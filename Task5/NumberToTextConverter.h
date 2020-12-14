@@ -2,7 +2,7 @@
 #include <string>
 #include <map>
 
-namespace ISXConverter
+namespace ISXNumberConverter
 {
 
 	class NumberToTextConverter
@@ -22,7 +22,7 @@ namespace ISXConverter
 		void InitLibrary();
 		std::string ConvertFromThreeDigits(int number);
 
-		std::map<int, std::string> library;
+		std::map<int, std::string> m_library;
 	};
 
 

@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
 
-#include "NumberToTextConverter.h"
+#include "Converter.h"
 
-int main() {
-	ISXConverter::NumberToTextConverter converter;
-	std::cout << converter.Convert(-423002230) << "\n";
-
+int main(int argc, char* argv[]) {
+	
+	ISXConverter::Converter converter;
+	converter.ShowNumberAsText(argc, argv);
 
 	system("pause");
 	return 0;
