@@ -1,20 +1,18 @@
 #pragma once
-#include <iostream>
-#include <string>
+#include "..\AdditionalClasses\Console.h"
 
-namespace ISXConsole
+using ISXConsole::Console;
+
+namespace ISXConsoleMngr
 {
-	class ConsoleManager
+	class ConsoleManager : public Console
 	{
 	public:
 		static bool WantContinue();
-		static void GetEnvelopeSize(const std::string& name, double& height, double&  width);
-		static void PrintMessage(const std::string& msg);
-		static void PrintInstruction();
+		static string GetEnvelopeSide(const string& side_name);
 
 	private:
-		static double ConvertToDouble(const std::string& str);
-		static bool HasStringOnlyDigitsPoint(const std::string& str);
+		
 	};
 }
 

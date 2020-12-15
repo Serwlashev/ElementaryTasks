@@ -25,6 +25,7 @@ namespace ISXApplication
 		void PrintField() const;
 		int Parse(const std::string& value);
 
+
 		Field* m_field;
 	};
 }

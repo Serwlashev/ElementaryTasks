@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "Application.h";
+#include "Application.h"
 
-int main()
+int main(int argc, char* argv[])
 {
 	ISXApp::Application* app = new ISXApp::Application();;
 	if (app != nullptr) {
-		app->Start();
+		app->Start(argc, argv);
 
 		delete app;
 	}
