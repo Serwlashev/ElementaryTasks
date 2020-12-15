@@ -21,11 +21,11 @@ void ISXApplication::Application::Start(const int& argc, char** argv)
 			PrintField();
 		}
 	}
-	else if (argc == 0) {
-		Console::ConsoleManager::PrintErrorMessage("To print field size, please, pass two integers to the main class call");
+	else if (argc == 1) {
+		ISXManager::ConsoleManager::PrintMessage("To print chess field with specific values of height and width, please, pass two integers to the main class call");
 	}
 	else {
-		Console::ConsoleManager::PrintErrorMessage("You entered wrong numbers of parameters");
+		ISXManager::ConsoleManager::PrintMessage("You entered wrong numbers of parameters");
 	}
 }
 
@@ -36,11 +36,11 @@ bool ISXApplication::Application::CreateField(const std::string& passed_height, 
 	int width = Parse(passed_width);
 
 	if (!height || !width) {
-		Console::ConsoleManager::PrintErrorMessage("You passed wrong parameter!");
+		ISXManager::ConsoleManager::PrintMessage("You passed wrong parameter!");
 		return false;
 	}
 	else if (height < 0 || width < 0) {
-		Console::ConsoleManager::PrintErrorMessage("Field size cannot be lass than zero!");
+		ISXManager::ConsoleManager::PrintMessage("Field size cannot be lass than zero!");
 		return false;
 	}
 
@@ -54,10 +54,10 @@ bool ISXApplication::Application::CreateField(const std::string& passed_height, 
 void ISXApplication::Application::PrintField() const
 {
 	if (m_field != nullptr) {
-		Console::ConsoleManager::DrawField(m_field);
+		ISXManager::ConsoleManager::DrawField(m_field);
 	}
 	else {
-		Console::ConsoleManager::PrintErrorMessage("Field doesn't exist!");
+		ISXManager::ConsoleManager::PrintMessage("Field doesn't exist!");
 	}
 }
 

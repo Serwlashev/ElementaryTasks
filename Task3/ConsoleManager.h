@@ -4,7 +4,7 @@
 
 namespace ISXConsole
 {
-	class ConsoleManager
+	class ConsoleManager 
 	{
 	public:
 		static bool WantContinue();

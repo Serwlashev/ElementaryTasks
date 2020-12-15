@@ -6,7 +6,7 @@
 #include "ConsoleManager.h"
 
 using ISXField::Field;
-using Console::ConsoleManager;
+using ISXManager::ConsoleManager;
 
 namespace ISXApplication
 {

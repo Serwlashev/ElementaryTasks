@@ -1,15 +1,13 @@
 #pragma once
-#include <iostream>
-#include <string>
-
+#include "..\AdditionalClasses\Console.h"
 #include "Field.h"
+using ISXConsole::Console;
 
-namespace Console
+namespace ISXManager
 {
-	class ConsoleManager
+	class ConsoleManager : public Console
 	{
 	public:
-		static void PrintErrorMessage(const std::string& message);
 		static void DrawField(const ISXField::Field* field);
 	};
 
