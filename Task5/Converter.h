@@ -3,6 +3,9 @@
 #include <string>
 
 #include "NumberToTextConverter.h"
+#include "ConsoleMgr.h";
+
+using ISXConsoleMgr::ConsoleMgr;
 
 namespace ISXConverter
 {

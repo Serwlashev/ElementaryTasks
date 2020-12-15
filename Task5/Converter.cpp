@@ -15,10 +15,10 @@ ISXConverter::Converter::~Converter()
 void ISXConverter::Converter::ShowNumberAsText(const int& argc, char** argv)
 {
 	if (argc == 1) {
-		std::cout << "You can pass an integer number to the main class call and we translate it into the text\n";
+		ConsoleMgr::PrintMessage("You can pass an integer number to the main class call and we translate it into the text\n");
 	}
 	else if (argc > 2) {
-		std::cout << "You passed wrong number of arguments!\n";
+		ConsoleMgr::PrintMessage("You passed wrong number of arguments!\n");
 	}
 	else {
 		ConvertNumber(argv[1]);
@@ -31,17 +31,17 @@ void ISXConverter::Converter::ConvertNumber(const std::string& value)
 		if (m_converter != nullptr) {
 			int number = Parse(value);
 
-			std::cout << m_converter->Convert(number) << "\n";
+			ConsoleMgr::PrintMessage(m_converter->Convert(number) + "\n");
 		}
 		else {
-			std::cout << "Cannot create an instance of the number converter!\n";
+			ConsoleMgr::PrintMessage("Cannot create an instance of the number converter!\n");
 		}
 	}
 	catch (std::invalid_argument ex) {
-		std::cout << ex.what() << "\n";
+		ConsoleMgr::PrintMessage(ex.what());
 	}
 	catch (std::out_of_range) {
-		std::cout << "You passed too long number! Your number should be from -2,147,483,648 to 2,147,483,647\n";
+		ConsoleMgr::PrintMessage("You passed too long number! Your number should be from -2,147,483,648 to 2,147,483,647\n");
 	}
 }
 
