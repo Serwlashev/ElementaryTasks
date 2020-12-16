@@ -24,11 +24,6 @@ bool ISXGenerator::Generator::operator!=(const Generator& gen) const
 	return m_current * m_current <= gen.GetMaxNumber();
 }
 
-//bool operator !=(const ISXGenerator::Generator& gen) const
-//{
-//	return m_current * m_current <= gen.GetMaxNumber();
-//}
-
 unsigned long long ISXGenerator::Generator::operator*() const
 {
 	return m_current;
@@ -37,9 +32,5 @@ unsigned long long ISXGenerator::Generator::operator*() const
 unsigned long long ISXGenerator::Generator::GetMaxNumber() const
 {
 	return m_max;
-}
-
-void ISXGenerator::Generator::s()
-{
 }
 

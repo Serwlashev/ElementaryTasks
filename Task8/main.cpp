@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "ProgrammPow.h"
+#include "ProgramFibonacci.h"
 
 int main(int argc, char* argv[]) {
-	ISXProgrammPow::ProgrammPow programm;
+	ISXProgrFibonacci::ProgramFibonacci programm;
 	programm.Start(argc, argv);
 
 	return 0;
