@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="IGenerator.h" />
     <ClInclude Include="Console.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="IGenerator.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

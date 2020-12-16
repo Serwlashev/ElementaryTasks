@@ -49,7 +49,7 @@ int ISXConverter::Converter::Parse(const std::string& value)
 {
 	int res = 0;
 
-	if (!value.empty() || value != " ") {
+	if (!value.empty() && value != " ") {
 		res = std::stoi(value);
 
 		if (value.compare(std::to_string(res)) != 0) {

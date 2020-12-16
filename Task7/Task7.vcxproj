@@ -92,6 +92,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\AdditionalClasses\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Console.obj;IGenerator.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -139,11 +141,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DimenshionlessNumber.h" />
+    <ClInclude Include="Generator.h" />
+    <ClInclude Include="ManagerConsole.h" />
+    <ClInclude Include="ProgrammPow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DimenshionlessNumber.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="ManagerConsole.cpp" />
+    <ClCompile Include="ProgrammPow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.vcxproj">
+      <Project>{7a72d2d6-aade-4c88-a3db-9e723b2d268e}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

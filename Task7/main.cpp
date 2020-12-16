@@ -1,14 +1,12 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#include "DimenshionlessNumber.h"
 
-int main() {
+#include "ProgrammPow.h"
 
-	ISXNumber::LoongNumber numb;
-	numb.EnterString("123456789012345678901234567890123456789012345678901234567890123343345678901234567890123");
-
-
+int main(int argc, char* argv[]) {
+	ISXProgrammPow::ProgrammPow programm;
+	programm.Start(argc, argv);
 
 	return 0;
 }
