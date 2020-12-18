@@ -20,7 +20,7 @@ void ISXProgrFibonacci::ProgramFibonacci::Start(const int& argc, char** argv)
 
 		FibonacciGenerator start(num_min, num_max);
 		FibonacciGenerator end(num_max);
-		for (auto it = start; it != end; ++it) {
+		for (FibonacciGenerator it = start; it != end; ++it) {
 			MngrConsole::PrintMessage(std::to_string(*it));
 			MngrConsole::PrintMessage(", ");
 		}
