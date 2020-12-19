@@ -1,16 +1,11 @@
 #include "ConsoleManager.h"
 
 
-void ISXManager::ConsoleManager::DrawField(const ISXField::Field* field)
+void ISXManager::ConsoleManager::DrawField(const std::unique_ptr<Field>& field)
 {
-    for (int i = 0; i < field->get_height(); i++) {
-        for (int j = 0; j < field->get_width(); j++) {
-            if (i % 2 == 0) {
-                cout << "*  ";
-            }
-            else {
-                cout << "  *";
-            }
+    for (size_t i = 0; i < field->get_height(); i++) {
+        for (size_t j = 0; j < field->get_width(); j++) {
+            cout << field.get()->operator()(i, j);
         }
         cout << "\n";
     }

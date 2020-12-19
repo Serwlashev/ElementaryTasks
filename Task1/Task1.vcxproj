@@ -93,7 +93,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\AdditionalClasses\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Console.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Console.obj;Parser.obj;Validator.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,12 +142,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Cell.cpp" />
     <ClCompile Include="ConsoleManager.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Cell.h" />
     <ClInclude Include="ConsoleManager.h" />
     <ClInclude Include="Field.h" />
   </ItemGroup>

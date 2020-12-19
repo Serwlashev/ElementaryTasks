@@ -4,6 +4,8 @@
 
 #include "Field.h"
 #include "ConsoleManager.h"
+#include "../AdditionalClasses/Validator.h"
+#include "../AdditionalClasses//Parser.h"
 
 using ISXField::Field;
 using ISXManager::ConsoleManager;
@@ -14,19 +16,16 @@ namespace ISXApplication
 	class Application
 	{
 	public:
-		Application();
-		~Application();
-
 		// The method prints the chess field according to entered parameters - height and width
 		void Start(const int& argc, char** argv);
 
 	private:
-		bool CreateField(const std::string& passed_height, const std::string& passed_width);
+		bool TryCreateField(const std::string& passed_height, const std::string& passed_width);
+		std::unique_ptr<Field> CreateField(unsigned int height, unsigned int width);
 		void PrintField() const;
-		int Parse(const std::string& value);
 
 
-		Field* m_field;
+		std::unique_ptr<Field> m_field;
 	};
 }
 
