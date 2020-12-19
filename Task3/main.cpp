@@ -3,7 +3,7 @@
 #include "Programm.h"
 
 int main(int argc, char* argv[]) {
-	ISXProg::Programm programm;
+	ISXProg::TriangleStorage programm;
 
 	programm.Start(argc, argv);
 

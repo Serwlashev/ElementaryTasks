@@ -142,7 +142,6 @@
     <ClInclude Include="Converter.h" />
     <ClInclude Include="IGenerator.h" />
     <ClInclude Include="Console.h" />
-    <ClInclude Include="Parser.h" />
     <ClInclude Include="Validator.h" />
   </ItemGroup>
   <ItemGroup>
@@ -150,7 +149,6 @@
     <ClCompile Include="IGenerator.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

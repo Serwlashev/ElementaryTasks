@@ -5,8 +5,9 @@
 #include "Field.h"
 #include "ConsoleManager.h"
 #include "../AdditionalClasses/Validator.h"
-#include "../AdditionalClasses//Parser.h"
+#include "../AdditionalClasses//Converter.h"
 
+using ISXNumberConverter::Converter;
 using ISXField::Field;
 using ISXManager::ConsoleManager;
 

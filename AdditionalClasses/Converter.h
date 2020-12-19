@@ -9,6 +9,8 @@ namespace ISXNumberConverter
 	{
 	public:
 		static double ConvertToDouble(const string number);
+		static unsigned int ParseUI(const std::string& number);
+
 	};
 
 }

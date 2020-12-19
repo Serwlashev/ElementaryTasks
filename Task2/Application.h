@@ -5,12 +5,10 @@
 #include "Envelope.h"
 #include "..\AdditionalClasses\Console.h"
 #include "..\AdditionalClasses\Validator.h"
-#include "..\AdditionalClasses\Parser.h"
 #include "..\AdditionalClasses\Converter.h"
 
 using ISXConsole::Console;
 using ISXValidator::Validator;
-using ISXParser::Parser;
 using ISXEnvelope::Envelope;
 using ISXNumberConverter::Converter;
 

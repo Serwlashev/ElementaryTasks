@@ -3,21 +3,25 @@
 #include <map>
 #include <vector>
 
-#include "ConsoleManager.h"
 #include "Triangle.h"
 #include <algorithm>
+#include "..\AdditionalClasses\Console.h"
+#include "..\AdditionalClasses\Validator.h"
+#include "..\AdditionalClasses\Converter.h"
 
-using ISXConsole::ConsoleManager;
+using ISXConsole::Console;
+using ISXValidator::Validator;
+using ISXNumberConverter::Converter;
 using ISXTriangle::Triangle;
 using std::vector;
 
 namespace ISXProg
 {
-	class Programm
+	class TriangleStorage
 	{
 	public:
-		Programm();
-		~Programm();
+		TriangleStorage();
+		~TriangleStorage();
 
 		void Start(const int& argc, char** argv);
 
@@ -28,8 +32,6 @@ namespace ISXProg
 		Triangle* CreateTriangle(const std::string& name, const double& first_side, const double& second_side, const double& third_side);
 		bool CanCreateTriangle(const std::string& name, const double& first_side, const double& second_side, const double& third_side) const;
 		vector<string> ExtractParamsFromString(const std::string& params) const;
-		double ConvertToDouble(const std::string& str) const ;
-		bool HasStringOnlyDigitsPoint(const std::string& str) const;
 		
 		vector<Triangle*> m_triangles;
 		string m_instruction;
