@@ -1,10 +1,8 @@
-#include <iostream>
-#include <string>
+#include "ParserApplication.h"
 
+int main(int argc, char* argv[]) {
+	ISXApplication::ParserApplication app;
+	app.Parse(argc, argv);
 
-int main() {
-
-
-	system("pause");
 	return 0;
 }
