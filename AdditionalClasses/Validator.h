@@ -16,6 +16,7 @@ namespace ISXValidator
 
 	private:
 		static bool IsStringUnsignedInt(const std::string number);
+		static bool IsStringDouble(const std::string number);
 	};
 }
 

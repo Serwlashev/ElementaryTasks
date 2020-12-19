@@ -11,8 +11,9 @@ namespace ISXConsole
 	class Console
 	{
 	public:
-		static void PrintMessage(const std::string& message);
-
+		static bool WantContinue();
+		static void PrintMessage(const string& message);
+		static string GetStringValue(const string& message);
 	};
 }
 

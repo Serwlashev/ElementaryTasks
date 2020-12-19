@@ -12,6 +12,9 @@ bool ISXValidator::Validator::IsValid(ValidationMode mode, const std::string& nu
 	case ValidationMode::UnsignedInteger:
 		result = IsStringUnsignedInt(number);
 		break;
+	case ValidationMode::Double:
+		result = IsStringDouble(number);
+		break;
 	}
 	return result;
 }
@@ -26,3 +29,23 @@ bool ISXValidator::Validator::IsStringUnsignedInt(const std::string number)
 
 	return true;
 }
+
+bool ISXValidator::Validator::IsStringDouble(const std::string number)
+{
+	int count_points = 0;
+	for (int i = 0; i < number.length(); i++) {
+
+		if (number[i] == '.') {
+			count_points++;
+			if (count_points <= 1) {    // If we have more than one point we get false as result
+				continue;
+			}
+		}
+
+		if (!isdigit(number[i])) {			// If we have other symbol
+			return false;
+		}
+	}
+	return true;
+}
+
