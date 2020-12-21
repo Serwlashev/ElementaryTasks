@@ -1,13 +1,11 @@
 #pragma once
 #include <string>
-#include <tuple>
 
 #include "Field.h"
 #include "ConsoleManager.h"
-#include "../AdditionalClasses/Validator.h"
-#include "../AdditionalClasses/Converter.h"
+#include "ChessboardParser.h"
 
-using ISXNumberConverter::Converter;
+using ISXChessParser::ChessboardParser;
 using ISXField::Field;
 using ISXManager::ConsoleManager;
 

@@ -5,13 +5,14 @@
 #include <fstream>
 
 #include "LuckyTicketCounter.h"
-#include "..\AdditionalClasses\Validator.h"
-#include "..\AdditionalClasses\Console.h"
+#include "LuckyTicketView.h"
+#include "TicketParser.h"
 
-using ISXConsole::Console;
+using ISXTicketParser::TicketParser;
+using ISXLuckyTickets::LuckyTicketCounter;
+using ISXTicketView::LuckyTicketView;
 using std::string;
 using std::vector;
-using ISXLuckyTickets::LuckyTicketCounter;
 
 namespace ISXProgramTickets
 {
@@ -23,7 +24,6 @@ namespace ISXProgramTickets
 		void Start(const int& argc, char** argv1);
 	private:
 		ISXMode::TicketsMode ReadAlgorythmFromFile(const string& path);
-		unsigned int GetTicketLength();
 		std::unique_ptr<LuckyTicketCounter> CreateTicketsCounter(ISXMode::TicketsMode mode);
 		void ShowCalculatedLuckyTickets(const vector<string>& tickets);
 

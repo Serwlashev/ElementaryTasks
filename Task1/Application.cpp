@@ -19,21 +19,18 @@ void ISXApplication::Application::Start(const int& argc, char** argv)
 bool ISXApplication::Application::TryCreateField(const std::string& passed_height, const std::string& passed_width)
 {
 	bool success = false;
-	if (ISXValidator::Validator::IsValid(ISXValidator::ValidationMode::UnsignedInteger, passed_height) &&
-		ISXValidator::Validator::IsValid(ISXValidator::ValidationMode::UnsignedInteger, passed_width)) {
+	
+	unsigned int height = 0;
+	unsigned int width = 0;
 
-		unsigned int height = 0;
-		unsigned int width = 0;
+	height = ChessboardParser::ParseToUI(passed_height);
+	width = ChessboardParser::ParseToUI(passed_width);
 
-		height = Converter::ParseUI(passed_height);
-		width = Converter::ParseUI(passed_width);
+	if (height > 0 && width > 0) {
+		m_field = CreateField(height, width);
 
-		if(height > 0 && width > 0){
-			m_field = CreateField(height, width);
-
-			if (m_field) {
-				success = true;
-			}
+		if (m_field) {
+			success = true;
 		}
 	}
 

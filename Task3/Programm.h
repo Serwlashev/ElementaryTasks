@@ -5,15 +5,14 @@
 
 #include "Triangle.h"
 #include <algorithm>
-#include "..\AdditionalClasses\Console.h"
-#include "..\AdditionalClasses\Validator.h"
-#include "..\AdditionalClasses\Converter.h"
+#include "ViewTriangle.h"
+#include "TriangleParser.h"
 
-using ISXConsole::Console;
-using ISXValidator::Validator;
-using ISXNumberConverter::Converter;
+using ISXTriangleParser::TriangleParser;
+using ISXTriangleView::ViewTriangle;
 using ISXTriangle::Triangle;
 using std::vector;
+using std::string;
 
 namespace ISXProg
 {

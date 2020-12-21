@@ -5,7 +5,7 @@
 int main(int argc, char* argv[]) {
 	
 	ISXConverter::Converter converter;
-	converter.ShowNumberAsText(argc, argv);
+	std:: cout << converter.ShowNumberAsText(argc, argv) << std::endl;
 
 	system("pause");
 	return 0;

@@ -33,6 +33,12 @@
     <ClCompile Include="MoscowMode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LuckyTicketView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TicketParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProgramTickets.h">
@@ -50,8 +56,11 @@
     <ClInclude Include="MoscowMode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="LuckyTicketView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TicketParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

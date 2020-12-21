@@ -3,9 +3,9 @@
 #include <iostream>
 
 #include "FileParser.h"
-#include "../AdditionalClasses/Console.h"
+#include "FileParserView.h"
 
-using ISXConsole::Console;
+using ISXFileParserView::FileParserView;
 using ISXParse::FileParser;
 
 namespace ISXApplication

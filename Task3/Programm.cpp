@@ -24,7 +24,7 @@ void ISXProg::TriangleStorage::Start(const int& argc, char** argv)
     vector<string> params_arr;
 
     if (argc == 1) {
-        Console::PrintMessage(m_instruction);
+        ViewTriangle::PrintMessage(m_instruction);
     }
     else if (argc == 5) {
         for (int i = 1; i < 5; i++) {
@@ -32,29 +32,29 @@ void ISXProg::TriangleStorage::Start(const int& argc, char** argv)
         }
         AddNewTriangle(params_arr);
 
-        should_continue = Console::WantContinue();
+        should_continue = ViewTriangle::WantContinue();
     }
     else {
-        Console::PrintMessage("You passed wrong number of parameters\n");
-        Console::PrintMessage(m_instruction);
+        ViewTriangle::PrintMessage("You passed wrong number of parameters\n");
+        ViewTriangle::PrintMessage(m_instruction);
 
-        should_continue = Console::WantContinue();
+        should_continue = ViewTriangle::WantContinue();
     }
 
     while (should_continue) {
-        Console::PrintMessage("The progamm allows you to add a new triangle to the list of triangles\n\n");
+        ViewTriangle::PrintMessage("The progamm allows you to add a new triangle to the list of triangles\n\n");
 
-        Console::PrintMessage("Please, enter all parameters of the triangle.\n");
-        params_arr = ExtractParamsFromString(Console::GetStringValue("Input format (separator - comma) <name>, <first side>, <second side>, <third side>:\n"));
+        ViewTriangle::PrintMessage("Please, enter all parameters of the triangle.\n");
+        params_arr = ExtractParamsFromString(ViewTriangle::GetStringValue("Input format (separator - comma) <name>, <first side>, <second side>, <third side>:\n"));
 
 		AddNewTriangle(params_arr);
 
-		should_continue = Console::WantContinue();
+		should_continue = ViewTriangle::WantContinue();
 	}
 
     SortTriangles();
 	ShowAllTriangles();
-    Console::PrintMessage("\nGoodbay!\n");
+    ViewTriangle::PrintMessage("\nGoodbay!\n");
 }
 
 void ISXProg::TriangleStorage::AddNewTriangle(const vector<string>& params_arr)
@@ -62,9 +62,9 @@ void ISXProg::TriangleStorage::AddNewTriangle(const vector<string>& params_arr)
     if (params_arr.size() == 4) {
 
         std::string name = params_arr[0];
-        double first_side = Converter::ConvertToDouble(params_arr[1]);
-        double second_side = Converter::ConvertToDouble(params_arr[2]);
-        double third_side = Converter::ConvertToDouble(params_arr[3]);
+        double first_side = TriangleParser::ParseToDouble(params_arr[1]);
+        double second_side = TriangleParser::ParseToDouble(params_arr[2]);
+        double third_side = TriangleParser::ParseToDouble(params_arr[3]);
 
         Triangle* newTriangle = CreateTriangle(name, first_side, second_side, third_side);
 
@@ -72,11 +72,11 @@ void ISXProg::TriangleStorage::AddNewTriangle(const vector<string>& params_arr)
             m_triangles.push_back(newTriangle);
         }
         else {
-            Console::PrintMessage("Cannot create an instance of the triangle\n");
+            ViewTriangle::PrintMessage("Cannot create an instance of the triangle\n");
         }
     }
     else {
-        Console::PrintMessage("You passed wrong parameters for the triangle!\n");
+        ViewTriangle::PrintMessage("You passed wrong parameters for the triangle!\n");
     }
 }
 
@@ -90,7 +90,7 @@ void ISXProg::TriangleStorage::ShowAllTriangles() const
 	if (!m_triangles.empty()) {
 		for (auto it = m_triangles.begin(); it != m_triangles.end(); it++)
 		{
-			Console::PrintMessage((*it)->GetTriangleData());
+            ViewTriangle::PrintMessage((*it)->GetTriangleData());
 		}
 	}
 }
@@ -134,13 +134,13 @@ std::vector<string> ISXProg::TriangleStorage::ExtractParamsFromString(const std:
             if (count_params == 1) {
                 result_params.push_back(tmp_param);
             }
-            else if (count_params == 2 && Validator::IsValid(ISXValidator::ValidationMode::Double, tmp_param)) {
+            else if (count_params == 2 && TriangleParser::IsValid(tmp_param)) {
                 result_params.push_back(tmp_param);
             }
-            else if (count_params == 3 && Validator::IsValid(ISXValidator::ValidationMode::Double, tmp_param)) {
+            else if (count_params == 3 && TriangleParser::IsValid(tmp_param)) {
                 result_params.push_back(tmp_param);
             }
-            else if (count_params == 4 && Validator::IsValid(ISXValidator::ValidationMode::Double, tmp_param)) {
+            else if (count_params == 4 && TriangleParser::IsValid(tmp_param)) {
                 result_params.push_back(tmp_param);
             }
             else {

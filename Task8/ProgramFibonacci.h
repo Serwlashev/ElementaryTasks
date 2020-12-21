@@ -2,16 +2,12 @@
 #include <vector>
 #include <string>
 #include "FibonacciGenerator.h"
-#include "../AdditionalClasses/Console.h"
-#include "../AdditionalClasses/Validator.h"
-#include "../AdditionalClasses//Converter.h"
+#include "ParserFibonacci.h"
 
 using std::string;
 using std::vector;
-using ISXNumberConverter::Converter;
-using ISXValidator::Validator;
-using ISXConsole::Console;
 using ISXFibonacci::FibonacciGenerator;
+using ISXParseFibonacci::ParserFibonacci;
 
 namespace ISXProgrFibonacci
 {
@@ -20,7 +16,7 @@ namespace ISXProgrFibonacci
 	public:
 		ProgramFibonacci();
 
-		void Start(const int& argc, char** argv);
+		string GetFibonacciNumbers(const int& argc, char** argv);
 
 	private:
 		vector<unsigned long long> GetNumbers(string start, string end);

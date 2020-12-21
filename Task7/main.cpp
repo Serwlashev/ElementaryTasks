@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]) {
 	ISXProgrammPow::ProgrammPow programm;
-	programm.Start(argc, argv);
+	std::cout << programm.GetStringPows(argc, argv) << "\n";
 
 	return 0;
 }

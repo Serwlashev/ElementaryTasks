@@ -2,60 +2,42 @@
 
 ISXConverter::Converter::Converter()
 {
-	m_converter = new ISXNumberConverter::NumberToTextConverter();
+	m_converter = std::make_unique<NumberToTextConverter>();
 }
 
-ISXConverter::Converter::~Converter()
+std::string ISXConverter::Converter::ShowNumberAsText(const int& argc, char** argv)
 {
-	if (m_converter != nullptr) {
-		delete m_converter;
-	}
-}
-
-void ISXConverter::Converter::ShowNumberAsText(const int& argc, char** argv)
-{
+	std::string result = "";
 	if (argc == 1) {
-		Console::PrintMessage("You can pass an integer number to the main class call and we translate it into the text\n");
+		result = "You can pass an integer number to the main class call and we translate it into the text\n";
 	}
 	else if (argc > 2) {
-		Console::PrintMessage("You passed wrong number of arguments!\n");
+		result = "You passed wrong number of arguments!\n";
 	}
 	else {
-		ConvertNumber(argv[1]);
+		result = ConvertNumberToText(argv[1]);
 	}
+	return result;
 }
 
-void ISXConverter::Converter::ConvertNumber(const std::string& value)
+std::string ISXConverter::Converter::ConvertNumberToText(const std::string& value)
 {
-	try {
-		if (m_converter != nullptr) {
-			int number = Parse(value);
+	std::string result = "";
+	if (Parser::IsValid(value)) {
+		int number = Parser::ParseToInt(value);
 
-			Console::PrintMessage(m_converter->Convert(number) + "\n");
+		if (m_converter) {
+			result = m_converter.get()->Convert(number);
 		}
-		else {
-			Console::PrintMessage("Cannot create an instance of the number converter!\n");
+		else{
+			result = "Cannot create an instance of the number converter!\n";
 		}
 	}
-	catch (std::invalid_argument ex) {
-		Console::PrintMessage(ex.what());
+	else {
+		result = "You passed wrong number!";
 	}
-	catch (std::out_of_range) {
-		Console::PrintMessage("You passed too long number! Your number should be from -2,147,483,648 to 2,147,483,647\n");
-	}
+
+	return result;
 }
 
-int ISXConverter::Converter::Parse(const std::string& value)
-{
-	int res = 0;
 
-	if (!value.empty() && value != " ") {
-		res = std::stoi(value);
-
-		if (value.compare(std::to_string(res)) != 0) {
-			throw std::invalid_argument("You should pass an integer number!\n");
-		}
-	}
-
-	return res;
-}

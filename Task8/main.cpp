@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]) {
 	ISXProgrFibonacci::ProgramFibonacci programm;
-	programm.Start(argc, argv);
+	std::cout << programm.GetFibonacciNumbers(argc, argv) << "\n";
 
 	return 0;
 }

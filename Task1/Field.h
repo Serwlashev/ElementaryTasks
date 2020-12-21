@@ -15,7 +15,7 @@ namespace ISXField
 		unsigned int get_height() const;
 		unsigned int get_width() const;
 
-		char operator() (const int height, const int width) const;
+		char operator() (const int& height, const int& width) const;
 	private:
 		vector<vector<Cell>> FillField(const unsigned int& height, const unsigned int& width);
 

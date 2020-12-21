@@ -92,8 +92,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\AdditionalClasses\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Console.obj;Converter.obj;Validator.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -143,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="ChessboardParser.cpp" />
     <ClCompile Include="ConsoleManager.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="main.cpp" />
@@ -150,16 +152,9 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Cell.h" />
+    <ClInclude Include="ChessboardParser.h" />
     <ClInclude Include="ConsoleManager.h" />
     <ClInclude Include="Field.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.vcxproj">
-      <Project>{7a72d2d6-aade-4c88-a3db-9e723b2d268e}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,14 +3,13 @@
 #include <string>
 
 #include "Envelope.h"
-#include "..\AdditionalClasses\Console.h"
-#include "..\AdditionalClasses\Validator.h"
-#include "..\AdditionalClasses\Converter.h"
+#include "EnvelopeView.h"
+#include "EnvelopeParser.h"
 
-using ISXConsole::Console;
-using ISXValidator::Validator;
+using ISXEenvConsole::EnvelopeView;
+using ISXEnvelopeParser::EnvelopeParser;
 using ISXEnvelope::Envelope;
-using ISXNumberConverter::Converter;
+
 
 namespace ISXApp
 {

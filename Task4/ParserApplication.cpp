@@ -16,7 +16,7 @@ void ISXApplication::ParserApplication::Parse(const int& argc, char** argv)
 		ReplaceLine(argv[1], argv[2], argv[3]);
 	}
 	else {
-		ISXConsole::Console::PrintMessage(m_instructions);
+		FileParserView::PrintMessage(m_instructions);
 	}
 }
 
@@ -26,10 +26,10 @@ void ISXApplication::ParserApplication::CountLineOccurences(const std::string& p
 	count = parser.get()->CountNumberOfOccurenses(path, line);
 
 	if (count > 0) {
-		ISXConsole::Console::PrintMessage("We found " + std::to_string(count) + " lines\n");
+		FileParserView::PrintMessage("We found " + std::to_string(count) + " lines\n");
 	}
 	else {
-		ISXConsole::Console::PrintMessage("Cannot find any string to count!\n");
+		FileParserView::PrintMessage("Cannot find any string to count!\n");
 	}
 }
 
@@ -38,10 +38,10 @@ void ISXApplication::ParserApplication::ReplaceLine(const string& path, const st
 	bool result = parser.get()->ReplaceStringToOther(path, search_line, replacing_line);
 
 	if (result) {
-		ISXConsole::Console::PrintMessage("The string was successfully replaced\n");
+		FileParserView::PrintMessage("The string was successfully replaced\n");
 	}
 	else {
-		ISXConsole::Console::PrintMessage("Cannot replace the string\n");
+		FileParserView::PrintMessage("Cannot replace the string\n");
 	}
 
 }

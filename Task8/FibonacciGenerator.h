@@ -1,11 +1,8 @@
 #pragma once
-#include "..\AdditionalClasses\IGenerator.h"
-
-using ISXBaseGenerator::IGenerator;
 
 namespace ISXFibonacci
 {
-	class FibonacciGenerator : public IGenerator
+	class FibonacciGenerator
 	{
 	public:
 		FibonacciGenerator();
@@ -14,8 +11,8 @@ namespace ISXFibonacci
 
 		FibonacciGenerator& operator++();
 		bool operator != (const FibonacciGenerator& gen) const;
-		unsigned long long operator*() const override;
-		unsigned long long GetMaxNumber() const override;
+		unsigned long long operator*() const;
+		unsigned long long GetMaxNumber() const;
 		static unsigned long long GetMaxAlowedNumber();
 		static unsigned long long GetMinAlowedNumber();
 

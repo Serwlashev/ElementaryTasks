@@ -5,51 +5,31 @@ ISXProgrammPow::ProgrammPow::ProgrammPow()
 	m_instruction = "Enter number from 1 to 4294967296 and we'll print a series of natural numbers whose square is less than a given number"; 
 }
 
-void ISXProgrammPow::ProgrammPow::Start(const int& argc, char** argv)
+string ISXProgrammPow::ProgrammPow::GetStringPows(const int& argc, char** argv)
 {
+	string result = "";
+
 	if (argc != 2) {
-		Console::PrintMessage("You passed wrong number of parameters!");
-		Console::PrintMessage(m_instruction);
-		return;
-	}
-	
-	unsigned long long number = Parse(argv[1]);
-
-	if (number >= 1 && number <= 4294967296) {
-
-		Generator start;
-		Generator end(number);
-		for (auto it = start; it != end; ++it) {
-			Console::PrintMessage(std::to_string(*it));
-			Console::PrintMessage(", ");
-		}
+		result = m_instruction;
 	}
 	else {
-		Console::PrintMessage(m_instruction);
-	}
-}
+		unsigned long long number = Parser::ParseULL(argv[1]);
 
-unsigned long long ISXProgrammPow::ProgrammPow::Parse(const std::string& number)
-{
-	unsigned long long res = 0;
+		if (number >= Generator::GetMinAllowedNumber() && number <= Generator::GetMaxAllowedNumber()) {
 
-	if (!number.empty() && number != " " && number.size() <= 10 && IsCorrectNumber(number)) {
-		res = std::stoull(number);
-	}
-
-	if (number.compare(std::to_string(res)) != 0) {
-		res = 0;
-	}
-
-	return res;
-}
-
-bool ISXProgrammPow::ProgrammPow::IsCorrectNumber(const std::string& number)
-{
-	for (size_t i = 0; i < number.length(); i++) {
-		if (!isdigit(number[i])) {
-			return false;
+			Generator start;
+			Generator end(number);
+			for (auto it = start; it <= end; ++it) {
+				result += std::to_string(*it);
+				result += ", ";
+			}
+		}
+		else {
+			result = m_instruction;
 		}
 	}
-	return true;
+	
+
+	return result;
 }
+

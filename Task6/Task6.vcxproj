@@ -21,25 +21,21 @@
   <ItemGroup>
     <ClCompile Include="CountingMode.cpp" />
     <ClCompile Include="LuckyTicketCounter.cpp" />
+    <ClCompile Include="LuckyTicketView.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoscowMode.cpp" />
     <ClCompile Include="PiterMode.cpp" />
     <ClCompile Include="ProgramTickets.cpp" />
+    <ClCompile Include="TicketParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CountingMode.h" />
     <ClInclude Include="LuckyTicketCounter.h" />
+    <ClInclude Include="LuckyTicketView.h" />
     <ClInclude Include="MoscowMode.h" />
     <ClInclude Include="PiterMode.h" />
     <ClInclude Include="ProgramTickets.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.vcxproj">
-      <Project>{7a72d2d6-aade-4c88-a3db-9e723b2d268e}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="TicketParser.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -115,8 +111,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\AdditionalClasses\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Console.obj;Validator.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

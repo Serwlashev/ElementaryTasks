@@ -1,11 +1,12 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "..\AdditionalClasses\Console.h"
 
 #include "NumberToTextConverter.h"
+#include "Parser.h"
 
-using ISXConsole::Console;
+using ISXConverterParser::Parser;
+using ISXNumberConverter::NumberToTextConverter;
 
 namespace ISXConverter
 {
@@ -13,14 +14,12 @@ namespace ISXConverter
 	{
 	public:
 		Converter();
-		~Converter();
-		void ShowNumberAsText(const int& argc, char** argv);
+		std::string ShowNumberAsText(const int& argc, char** argv);
 
 	private:
-		void ConvertNumber(const std::string& number);
-		int Parse(const std::string& number);
+		std::string ConvertNumberToText(const std::string& number);
 
-		ISXNumberConverter::NumberToTextConverter* m_converter;
+		std::unique_ptr<NumberToTextConverter> m_converter;
 	};
 }
 
