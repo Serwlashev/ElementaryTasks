@@ -8,8 +8,8 @@ ISXProgrammPow::ProgrammPow::ProgrammPow()
 void ISXProgrammPow::ProgrammPow::Start(const int& argc, char** argv)
 {
 	if (argc != 2) {
-		ManagerConsole::PrintMessage("You passed wrong number of parameters!");
-		ManagerConsole::PrintMessage(m_instruction);
+		Console::PrintMessage("You passed wrong number of parameters!");
+		Console::PrintMessage(m_instruction);
 		return;
 	}
 	
@@ -20,12 +20,12 @@ void ISXProgrammPow::ProgrammPow::Start(const int& argc, char** argv)
 		Generator start;
 		Generator end(number);
 		for (auto it = start; it != end; ++it) {
-			ManagerConsole::PrintMessage(std::to_string(*it));
-			ManagerConsole::PrintMessage(", ");
+			Console::PrintMessage(std::to_string(*it));
+			Console::PrintMessage(", ");
 		}
 	}
 	else {
-		ManagerConsole::PrintMessage(m_instruction);
+		Console::PrintMessage(m_instruction);
 	}
 }
 

@@ -36,3 +36,18 @@ unsigned int ISXNumberConverter::Converter::ParseUI(const std::string& number)
 
 	return res;
 }
+
+unsigned long long ISXNumberConverter::Converter::ConvertToULL(const std::string& number)
+{
+	unsigned long long res = 0;
+
+	if (!number.empty() && number != " " && number.size() <= 10) {
+		res = std::stoull(number);
+	}
+
+	if (number.compare(std::to_string(res)) != 0) {
+		res = 0;
+	}
+
+	return res;
+}

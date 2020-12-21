@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
-#include "ManagerConsole.h"
 #include "Generator.h"
+#include "..\AdditionalClasses\Console.h"
 
-using ISXManagerConsole::ManagerConsole;
+using ISXConsole::Console;
 using ISXGenerator::Generator;
 
 namespace ISXProgrammPow

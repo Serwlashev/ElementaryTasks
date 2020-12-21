@@ -93,7 +93,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\AdditionalClasses\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Console.obj;IGenerator.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Console.obj;IGenerator.obj;Validator.obj;Converter.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,13 +142,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FibonacciGenerator.h" />
-    <ClInclude Include="MngrConsole.h" />
     <ClInclude Include="ProgramFibonacci.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FibonacciGenerator.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MngrConsole.cpp" />
     <ClCompile Include="ProgramFibonacci.cpp" />
   </ItemGroup>
   <ItemGroup>

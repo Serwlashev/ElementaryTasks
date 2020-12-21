@@ -21,18 +21,12 @@
     <ClInclude Include="FibonacciGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MngrConsole.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProgramFibonacci.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FibonacciGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MngrConsole.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">

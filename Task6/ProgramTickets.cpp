@@ -2,7 +2,7 @@
 
 ISXProgramTickets::ProgramTickets::ProgramTickets()
 {
-
+	m_instruction = "Pass to the main class call path to the file with algorythm for counting and we'll count lucky tickets according to it";
 }
 
 void ISXProgramTickets::ProgramTickets::Start(const int& argc, char** argv)
@@ -13,7 +13,7 @@ void ISXProgramTickets::ProgramTickets::Start(const int& argc, char** argv)
 	ISXMode::TicketsMode ticket_mode;
 
 	if (argc != 2) {
-		ConsoleMngr::PrintInstruction();
+		Console::PrintMessage(m_instruction);
 		return;
 	}
 	else {
@@ -21,29 +21,29 @@ void ISXProgramTickets::ProgramTickets::Start(const int& argc, char** argv)
 	}
 
 	if (ticket_mode == ISXMode::TicketsMode::Undefined) {
-		ConsoleMngr::PrintMessage("Cannot find algorythm in the give file");
+		Console::PrintMessage("Cannot find algorythm in the give file");
 		return;
 	}
 	m_ticket_counter = CreateTicketsCounter(ticket_mode);
 
 	while (want_continue) {
 
-		ticket = ConsoleMngr::EnterNumber("Please, enter all digits from ticket\n");
+		ticket = Console::GetStringValue("Please, enter all digits from ticket\n");
 
 		if (ticket.size() == m_ticket_counter.get()->GetTicketLength() && 
 			ISXValidator::Validator::IsValid(ISXValidator::ValidationMode::UnsignedInteger, ticket)) {
 			tickets.push_back(ticket);
 		}
 		else {
-			ConsoleMngr::PrintMessage("You entered the wrong ticket!\n");
+			Console::PrintMessage("You entered the wrong ticket!\n");
 		}
 
-		want_continue = ConsoleMngr::WantContinue();
+		want_continue = Console::WantContinue();
 	}
 
 	ShowCalculatedLuckyTickets(tickets);
 
-	ConsoleMngr::PrintMessage("Goodbay!\n");
+	Console::PrintMessage("Goodbay!\n");
 }
 
 ISXMode::TicketsMode ISXProgramTickets::ProgramTickets::ReadAlgorythmFromFile(const std::string& path)
@@ -78,7 +78,7 @@ unsigned int ISXProgramTickets::ProgramTickets::GetTicketLength()
 	string length_str; 
 
 	while (true) {
-		length_str = ConsoleMngr::EnterNumber("Please, enter the length of the ticket. It should be even positive number from 2 to 100\n");
+		length_str = Console::GetStringValue("Please, enter the length of the ticket. It should be even positive number from 2 to 100\n");
 
 		if (ISXValidator::Validator::IsValid(ISXValidator::ValidationMode::UnsignedInteger, length_str)) {
 			length = stoi(length_str);
@@ -103,9 +103,9 @@ void ISXProgramTickets::ProgramTickets::ShowCalculatedLuckyTickets(const vector<
 {
 	if (m_ticket_counter) {
 		int count = m_ticket_counter.get()->CountTickets(tickets);
-			ConsoleMngr::PrintMessage("You entered " + std::to_string(count) + " lucky tickets\n");
+			Console::PrintMessage("You entered " + std::to_string(count) + " lucky tickets\n");
 	}
 	else {
-		ConsoleMngr::PrintMessage("Cannot calculate lucky tickets!\n");
+		Console::PrintMessage("Cannot calculate lucky tickets!\n");
 	}
 }

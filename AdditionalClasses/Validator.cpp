@@ -15,8 +15,21 @@ bool ISXValidator::Validator::IsValid(ValidationMode mode, const std::string& nu
 	case ValidationMode::Double:
 		result = IsStringDouble(number);
 		break;
+	case ValidationMode::UnsignedLongLong:
+		result = IsStringULL(number);
+		break;
 	}
 	return result;
+}
+
+bool ISXValidator::Validator::IsStringULL(const std::string number)
+{
+	for (size_t i = 0; i < number.length(); i++) {
+		if (!isdigit(number[i])) {
+			return false;
+		}
+	}
+	return true;
 }
 
 bool ISXValidator::Validator::IsStringUnsignedInt(const std::string number)

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ISXConsole::Console">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Console.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISXNumberConverter::Converter">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Converter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISXBaseGenerator::IGenerator">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAA=</HashCode>
+      <FileName>IGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISXValidator::Validator">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAgAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ISXValidator::ValidationMode">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAACAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validator.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -141,15 +141,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleMgr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NumberToTextConverter.cpp" />
     <ClCompile Include="Converter.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleMgr.h" />
     <ClInclude Include="NumberToTextConverter.h" />
     <ClInclude Include="Converter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.vcxproj">
+      <Project>{7a72d2d6-aade-4c88-a3db-9e723b2d268e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

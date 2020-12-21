@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleMngr.cpp" />
     <ClCompile Include="CountingMode.cpp" />
     <ClCompile Include="LuckyTicketCounter.cpp" />
     <ClCompile Include="main.cpp" />
@@ -28,7 +27,6 @@
     <ClCompile Include="ProgramTickets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleMngr.h" />
     <ClInclude Include="CountingMode.h" />
     <ClInclude Include="LuckyTicketCounter.h" />
     <ClInclude Include="MoscowMode.h" />
@@ -39,6 +37,9 @@
     <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.vcxproj">
       <Project>{7a72d2d6-aade-4c88-a3db-9e723b2d268e}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

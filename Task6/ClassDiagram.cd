@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ISXMode::CountingMode">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAABAAAgAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CountingMode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISXLuckyTickets::LuckyTicketCounter">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAiAAAAAAAAAAAAAAAABAAAAAACAAAAAA=</HashCode>
+      <FileName>LuckyTicketCounter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISXMoscowMode::MoscowMode">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MoscowMode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISXPiterMode::PiterMode">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PiterMode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISXProgramTickets::ProgramTickets">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAAIAAAAAAAAAAgAAEAAAAAAoAAAAAIAA=</HashCode>
+      <FileName>ProgramTickets.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ISXMode::TicketsMode">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>CountingMode.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

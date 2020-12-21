@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "..\AdditionalClasses\Console.h"
 
 #include "NumberToTextConverter.h"
-#include "ConsoleMgr.h";
 
-using ISXConsoleMgr::ConsoleMgr;
+using ISXConsole::Console;
 
 namespace ISXConverter
 {

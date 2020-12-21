@@ -8,49 +8,41 @@ ISXProgrFibonacci::ProgramFibonacci::ProgramFibonacci()
 void ISXProgrFibonacci::ProgramFibonacci::Start(const int& argc, char** argv)
 {
 	if (argc != 3) {
-		MngrConsole::PrintMessage("You passed wrong number of parameters!");
-		MngrConsole::PrintMessage(m_instruction);
+		Console::PrintMessage("You passed wrong number of parameters!");
+		Console::PrintMessage(m_instruction);
 		return;
 	}
 
-	unsigned long long num_min = Parse(argv[1]);
-	unsigned long long num_max = Parse(argv[2]);
+	vector<unsigned long long> numbers = GetNumbers(argv[1], argv[2]);
 
-	if (num_min >= 1 && num_min <= 4294967296 && num_max >= 1 && num_max <= 4294967296) {
-
-		FibonacciGenerator start(num_min, num_max);
-		FibonacciGenerator end(num_max);
-		for (FibonacciGenerator it = start; it != end; ++it) {
-			MngrConsole::PrintMessage(std::to_string(*it));
-			MngrConsole::PrintMessage(", ");
+	if (!numbers.empty()) {
+		for (auto it = numbers.begin(); it != numbers.end(); it++) {
+			Console::PrintMessage(std::to_string(*it) + " ");
 		}
 	}
 	else {
-		MngrConsole::PrintMessage(m_instruction);
+		Console::PrintMessage(m_instruction);
 	}
 }
 
-unsigned long long ISXProgrFibonacci::ProgramFibonacci::Parse(const std::string& number)
+vector<unsigned long long> ISXProgrFibonacci::ProgramFibonacci::GetNumbers(string start_num, string end_num)
 {
-	unsigned long long res = 0;
+	vector<unsigned long long> result = result;
 
-	if (!number.empty() && number != " " && number.size() <= 10 && IsCorrectNumber(number)) {
-		res = std::stoull(number);
-	}
 
-	if (number.compare(std::to_string(res)) != 0) {
-		res = 0;
-	}
+	if (Validator::IsValid(ISXValidator::ValidationMode::UnsignedLongLong, start_num) && Validator::IsValid(ISXValidator::ValidationMode::UnsignedLongLong, end_num)) {
+		unsigned long long num_min = Converter::ConvertToULL(start_num);
+		unsigned long long num_max = Converter::ConvertToULL(end_num);
 
-	return res;
-}
+		if (num_min >= FibonacciGenerator::GetMinAlowedNumber() && num_min <= FibonacciGenerator::GetMaxAlowedNumber() && num_max >= FibonacciGenerator::GetMinAlowedNumber() && num_max <= FibonacciGenerator::GetMaxAlowedNumber()) {
 
-bool ISXProgrFibonacci::ProgramFibonacci::IsCorrectNumber(const std::string& number)
-{
-	for (size_t i = 0; i < number.length(); i++) {
-		if (!isdigit(number[i])) {
-			return false;
+			FibonacciGenerator start(num_min, num_max);
+			FibonacciGenerator end(num_max);
+			for (FibonacciGenerator it = start; it != end; ++it) {
+				result.push_back(*it);
+			}
 		}
 	}
-	return true;
+
+	return result;
 }

@@ -22,12 +22,18 @@ bool ISXApplication::Application::TryCreateField(const std::string& passed_heigh
 	if (ISXValidator::Validator::IsValid(ISXValidator::ValidationMode::UnsignedInteger, passed_height) &&
 		ISXValidator::Validator::IsValid(ISXValidator::ValidationMode::UnsignedInteger, passed_width)) {
 
-		unsigned int height = Converter::ParseUI(passed_height);
-		unsigned int width = Converter::ParseUI(passed_width);
+		unsigned int height = 0;
+		unsigned int width = 0;
+
+		height = Converter::ParseUI(passed_height);
+		width = Converter::ParseUI(passed_width);
 
 		if(height > 0 && width > 0){
 			m_field = CreateField(height, width);
-			success = true;
+
+			if (m_field) {
+				success = true;
+			}
 		}
 	}
 

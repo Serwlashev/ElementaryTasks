@@ -1,10 +1,17 @@
 #pragma once
-
+#include <vector>
+#include <string>
 #include "FibonacciGenerator.h"
-#include "MngrConsole.h"
+#include "../AdditionalClasses/Console.h"
+#include "../AdditionalClasses/Validator.h"
+#include "../AdditionalClasses//Converter.h"
 
+using std::string;
+using std::vector;
+using ISXNumberConverter::Converter;
+using ISXValidator::Validator;
+using ISXConsole::Console;
 using ISXFibonacci::FibonacciGenerator;
-using ISXMngrConsole::MngrConsole;
 
 namespace ISXProgrFibonacci
 {
@@ -16,8 +23,7 @@ namespace ISXProgrFibonacci
 		void Start(const int& argc, char** argv);
 
 	private:
-		unsigned long long Parse(const std::string& number);
-		bool IsCorrectNumber(const std::string& number);
+		vector<unsigned long long> GetNumbers(string start, string end);
 
 		std::string m_instruction;
 	};
