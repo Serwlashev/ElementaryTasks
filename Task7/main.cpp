@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "ProgrammPow.h"
+#include "ProgramPow.h"
 
 int main(int argc, char* argv[]) {
-	ISXProgrammPow::ProgrammPow programm;
-	std::cout << programm.GetStringPows(argc, argv) << "\n";
+	ISXProgramPow::ProgramPow program;
+	std::cout << program.GetStringPows(argc, argv) << "\n";
 
 	return 0;
 }

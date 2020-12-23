@@ -1,7 +1,8 @@
 #pragma once
+#include <iostream>
 #include <string>
 #include <map>
-
+#include <list>
 namespace ISXNumberConverter
 {
 
@@ -21,6 +22,9 @@ namespace ISXNumberConverter
 
 		void InitLibrary();
 		std::string ConvertFromThreeDigits(int number);
+		std::list<int> PushToList(int number) const;
+		std::string MakeStringFromList(std::list<int> number_parts);
+		std::string GetNumberRank(int number_rank) const;
 
 		std::map<int, std::string> m_library;
 	};

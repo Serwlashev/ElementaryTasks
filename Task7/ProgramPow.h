@@ -7,12 +7,12 @@ using ISXPowParser::Parser;
 using std::string;
 using ISXGenerator::Generator;
 
-namespace ISXProgrammPow
+namespace ISXProgramPow
 {
-	class ProgrammPow
+	class ProgramPow
 	{
 	public:
-		ProgrammPow();
+		ProgramPow();
 
 		string GetStringPows(const int& argc, char** argv);
 

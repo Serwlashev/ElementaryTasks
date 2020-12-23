@@ -143,13 +143,13 @@
   <ItemGroup>
     <ClInclude Include="Generator.h" />
     <ClInclude Include="ParserPow.h" />
-    <ClInclude Include="ProgrammPow.h" />
+    <ClInclude Include="ProgramPow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Generator.cpp" />
     <ClCompile Include="ParserPow.cpp" />
-    <ClCompile Include="ProgrammPow.cpp" />
+    <ClCompile Include="ProgramPow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -44,40 +44,25 @@ ISXNumberConverter::NumberToTextConverter::NumberToTextConverter()
 
 std::string ISXNumberConverter::NumberToTextConverter::Convert(int number)
 {
-	std::string result = "";
+	std::string result_str = "";
 
 	if (number == 0) {
-		return result.append(m_library.at(number));
+		return result_str.append(m_library.at(number));
 	}
 
 	if (number < 0) {
-		result.append("minus");
+		result_str.append("minus ");
 		number *= -1;
 	}
+	std::list<int> number_parts = PushToList(number);
 
-	while (number) {			// While we have a number we separate each part of the number (billions, millions, thousands and other) from the number and add it to the result
-		if (number >= BILLION) {
-			result += ConvertFromThreeDigits(number / BILLION);
-			result.append(" " + m_library.at(BILLION));
-			number %= BILLION;
-		}
-		else if (number >= MILLION) {
-			result += ConvertFromThreeDigits(number / MILLION);
-			result.append(" " + m_library.at(MILLION));
-			number %= MILLION;
-		}
-		else if (number >= THOUSAND) {
-			result += ConvertFromThreeDigits(number / THOUSAND);
-			result.append(" " + m_library.at(THOUSAND));
-			number %= THOUSAND;
-		}
-		else {
-			result.append(ConvertFromThreeDigits(number));
-			number /= THOUSAND;
-		}
+	result_str.append(MakeStringFromList(number_parts));
+ 
+	if (result_str[result_str.length() - 1] == ' ') {
+		result_str.erase(result_str.length() - 1, 1);
 	}
 
-	return result;
+	return result_str;
 }
 
 std::string ISXNumberConverter::NumberToTextConverter::ConvertFromThreeDigits(int number)
@@ -85,17 +70,51 @@ std::string ISXNumberConverter::NumberToTextConverter::ConvertFromThreeDigits(in
 	std::string result = "";
 
 	if (number >= HUNDRED) {	// First of all we should separate handreds from number
-		result.append(" " + m_library.at(number / HUNDRED));
-		result.append(" " + m_library.at(HUNDRED));
+		result.append(m_library.at(number / HUNDRED) + " ");
+		result.append(m_library.at(HUNDRED) + " ");
 		number %= HUNDRED;
 	}
 	if (number > 20) {			// If number has dozens we separate them
-		result.append(" " + m_library.at((number / 10) * 10));
+		result.append(m_library.at((number / 10) * 10) + " ");
 		number %= 10;
 	}
 	if (number >= 1) {			// If number is smaller than twenty he has definition in library
-		result.append(" " + m_library.at(number));
+		result.append(m_library.at(number) + " ");
 	}
 
 	return result;
+}
+
+std::list<int> ISXNumberConverter::NumberToTextConverter::PushToList(int number) const
+{
+	std::list<int> number_list;
+
+	while (number) {
+		number_list.push_front(number % 1000);
+		number /= 1000;
+	}
+
+	return number_list;
+}
+
+std::string ISXNumberConverter::NumberToTextConverter::MakeStringFromList(std::list<int> number_parts)
+{
+	std::string result = "";
+	
+	while (!number_parts.empty()) {
+		result.append(ConvertFromThreeDigits(number_parts.front()));
+		
+		if (number_parts.front() != 0 && number_parts.size() > 1) {
+			result.append(GetNumberRank(number_parts.size() - 1));
+		}
+
+		number_parts.pop_front();
+	}
+
+	return result;
+}
+
+std::string ISXNumberConverter::NumberToTextConverter::GetNumberRank(int number_rank) const
+{
+	return m_library.at(std::pow(1000, number_rank)) + " ";
 }

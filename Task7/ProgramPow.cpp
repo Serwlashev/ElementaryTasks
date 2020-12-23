@@ -1,11 +1,11 @@
-#include "ProgrammPow.h"
+#include "ProgramPow.h"
 
-ISXProgrammPow::ProgrammPow::ProgrammPow()
+ISXProgramPow::ProgramPow::ProgramPow()
 {
 	m_instruction = "Enter number from 1 to 4294967296 and we'll print a series of natural numbers whose square is less than a given number"; 
 }
 
-string ISXProgrammPow::ProgrammPow::GetStringPows(const int& argc, char** argv)
+string ISXProgramPow::ProgramPow::GetStringPows(const int& argc, char** argv)
 {
 	string result = "";
 

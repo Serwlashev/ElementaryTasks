@@ -24,13 +24,22 @@
     <ClCompile Include="ConsoleManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Field.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Cell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ChessboardParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessboardFactorycpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,13 +50,22 @@
     <ClInclude Include="ConsoleManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Field.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChessboardParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chessboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChessboardFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

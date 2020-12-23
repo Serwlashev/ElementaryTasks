@@ -1,11 +1,11 @@
-#include "Converter.h"
+#include "NumberConverter.h"
 
-ISXConverter::Converter::Converter()
+ISXConverter::NumberConverter::NumberConverter()
 {
-	m_converter = std::make_unique<NumberToTextConverter>();
+	m_converter = std::make_unique<ISXNumberConverter::NumberToTextConverter>();
 }
 
-std::string ISXConverter::Converter::ShowNumberAsText(const int& argc, char** argv)
+std::string ISXConverter::NumberConverter::ShowNumberAsText(const int& argc, char** argv)
 {
 	std::string result = "";
 	if (argc == 1) {
@@ -20,11 +20,11 @@ std::string ISXConverter::Converter::ShowNumberAsText(const int& argc, char** ar
 	return result;
 }
 
-std::string ISXConverter::Converter::ConvertNumberToText(const std::string& value)
+std::string ISXConverter::NumberConverter::ConvertNumberToText(const std::string& value)
 {
 	std::string result = "";
-	if (Parser::IsValid(value)) {
-		int number = Parser::ParseToInt(value);
+	if (ISXConverterParser::Parser::IsValid(value)) {
+		int number = ISXConverterParser::Parser::ParseToInt(value);
 
 		if (m_converter) {
 			result = m_converter.get()->Convert(number);

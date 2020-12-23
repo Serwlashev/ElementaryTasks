@@ -5,21 +5,18 @@
 #include "NumberToTextConverter.h"
 #include "Parser.h"
 
-using ISXConverterParser::Parser;
-using ISXNumberConverter::NumberToTextConverter;
-
 namespace ISXConverter
 {
-	class Converter
+	class NumberConverter
 	{
 	public:
-		Converter();
+		NumberConverter();
 		std::string ShowNumberAsText(const int& argc, char** argv);
 
 	private:
 		std::string ConvertNumberToText(const std::string& number);
 
-		std::unique_ptr<NumberToTextConverter> m_converter;
+		std::unique_ptr<ISXNumberConverter::NumberToTextConverter> m_converter;
 	};
 }
 

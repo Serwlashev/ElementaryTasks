@@ -1,14 +1,19 @@
 #include "Cell.h"
 
-ISXCell::Cell::Cell() : m_symb(' ') { }
+namespace ISXCell {
 
-void ISXCell::Cell::SetSymb(const char& symb)
-{
-	m_symb = symb;
-}
+	Cell::Cell() : m_symb(' ') {
+	}
+	
+	void Cell::SetSymb(const char& symb) {
+	
+		m_symb = symb;
+	}
+	
+	char Cell::GetSumbol() const {
+	
+		return m_symb;
+	}
 
-char ISXCell::Cell::GetSumbol() const
-{
-	return m_symb;
-}
 
+} // namespace ISXCell

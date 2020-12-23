@@ -1,18 +1,20 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Field.h"
+#include <vector>
 
-using ISXField::Field;
+#include "Cell.h"
 
-namespace ISXManager
-{
-	class ConsoleManager
-	{
-	public:
-		static void DrawField(const std::unique_ptr<Field>& field);
-		static void PrintMessage(const std::string& message);
-	};
+
+
+namespace ISXManager {
+
+    class ConsoleManager {
+      public:
+        static void DrawField(const std::vector<std::vector<ISXCell::Cell>>& field);
+    
+        static void PrintMessage(const std::string & message);
+    
+    };
 
 }
-

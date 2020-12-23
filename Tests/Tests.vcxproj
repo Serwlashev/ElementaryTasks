@@ -37,7 +37,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="task1_chessboard_test.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="task2_envelopes_test.cpp" />
+    <ClCompile Include="task3_triangles_test.cpp" />
+    <ClCompile Include="task4_file_parser_test.cpp" />
+    <ClCompile Include="task5_to_string_converter_test.cpp" />
+    <ClCompile Include="task6_lucky-tickets_test.cpp" />
+    <ClCompile Include="task7_numbers_pow_test.cpp" />
+    <ClCompile Include="task8_fibonacci_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -49,9 +55,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdditionalClasses\AdditionalClasses.vcxproj">
-      <Project>{7a72d2d6-aade-4c88-a3db-9e723b2d268e}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\Task1\Task1.vcxproj">
       <Project>{cdc916aa-53cb-4831-ac38-bc44db040aec}</Project>
     </ProjectReference>
@@ -95,8 +98,8 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>..\Task1\Debug;..\AdditionalClasses\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Cell.obj;Field.obj;Application.obj;Validator.obj;Converter.obj;Console.obj;ConsoleManager.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Task8\Debug;..\Task7\Debug;..\Task6\Debug;..\Task5\Debug;..\Task4\Debug;..\Task3\Debug;..\Task2\Debug;..\Task1\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Cell.obj;Field.obj;Application.obj;ChessboardParser.obj;ConsoleManager.obj;Chessboard.obj;ChessboardFactorycpp.obj;NumberConverter.obj;NumberToTextConverter.obj;Parser.obj;PiterMode.obj;MoscowMode.obj;LuckyTicketCounter.obj;CountingMode.obj;TicketParser.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -112,6 +115,8 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>Cell.obj;Field.obj;Application.obj;ConsoleManager.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Task8\Debug;..\Task7\Debug;..\Task6\Debug;..\Task5\Debug;..\Task4\Debug;..\Task3\Debug;..\Task2\Debug;..\Task1\Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

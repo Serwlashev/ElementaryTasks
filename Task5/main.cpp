@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "Converter.h"
+#include "NumberConverter.h"
 
 int main(int argc, char* argv[]) {
 	
-	ISXConverter::Converter converter;
+	ISXConverter::NumberConverter converter;
 	std:: cout << converter.ShowNumberAsText(argc, argv) << std::endl;
 
 	system("pause");

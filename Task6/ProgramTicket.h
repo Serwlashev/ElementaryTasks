@@ -14,12 +14,12 @@ using ISXTicketView::LuckyTicketView;
 using std::string;
 using std::vector;
 
-namespace ISXProgramTickets
+namespace ISXProgramTicket
 {
-	class ProgramTickets
+	class ProgramTicket
 	{
 	public:
-		ProgramTickets();
+		ProgramTicket();
 
 		void Start(const int& argc, char** argv1);
 	private:

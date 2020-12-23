@@ -1,11 +1,11 @@
-#include "ProgramTickets.h"
+#include "ProgramTicket.h"
 
-ISXProgramTickets::ProgramTickets::ProgramTickets()
+ISXProgramTicket::ProgramTicket::ProgramTicket()
 {
 	m_instruction = "Pass to the main class call path to the file with algorythm for counting and we'll count lucky tickets according to it";
 }
 
-void ISXProgramTickets::ProgramTickets::Start(const int& argc, char** argv)
+void ISXProgramTicket::ProgramTicket::Start(const int& argc, char** argv)
 {
 	bool want_continue = true;
 	string ticket = "";
@@ -46,7 +46,7 @@ void ISXProgramTickets::ProgramTickets::Start(const int& argc, char** argv)
 	LuckyTicketView::PrintMessage("Goodbay!\n");
 }
 
-ISXMode::TicketsMode ISXProgramTickets::ProgramTickets::ReadAlgorythmFromFile(const std::string& path)
+ISXMode::TicketsMode ISXProgramTicket::ProgramTicket::ReadAlgorythmFromFile(const std::string& path)
 {
 	string temp_str;
 	std::ifstream is(path, std::ios::in | std::ios::binary);
@@ -71,7 +71,7 @@ ISXMode::TicketsMode ISXProgramTickets::ProgramTickets::ReadAlgorythmFromFile(co
 	return ISXMode::TicketsMode::Undefined;
 }
 
-std::unique_ptr<LuckyTicketCounter> ISXProgramTickets::ProgramTickets::CreateTicketsCounter(ISXMode::TicketsMode mode)
+std::unique_ptr<LuckyTicketCounter> ISXProgramTicket::ProgramTicket::CreateTicketsCounter(ISXMode::TicketsMode mode)
 {
 	std::string length_str = LuckyTicketView::GetStringValue("Please, enter the length of the ticket. It should be even positive number from 2 to 100\n");
 
@@ -85,7 +85,7 @@ std::unique_ptr<LuckyTicketCounter> ISXProgramTickets::ProgramTickets::CreateTic
 	return nullptr;
 }
 
-void ISXProgramTickets::ProgramTickets::ShowCalculatedLuckyTickets(const vector<string>& tickets)
+void ISXProgramTicket::ProgramTicket::ShowCalculatedLuckyTickets(const vector<string>& tickets)
 {
 	if (m_ticket_counter) {
 		int count = m_ticket_counter.get()->CountTickets(tickets);

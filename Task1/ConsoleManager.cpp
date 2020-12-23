@@ -1,17 +1,25 @@
+
 #include "ConsoleManager.h"
+#include "Field.h"
 
+namespace ISXManager {
 
-void ISXManager::ConsoleManager::DrawField(const std::unique_ptr<Field>& field)
+void ConsoleManager::DrawField(const std::vector<std::vector<ISXCell::Cell>>& field)
 {
-    for (size_t i = 0; i < field->get_height(); i++) {
-        for (size_t j = 0; j < field->get_width(); j++) {
-            std::cout << field.get()->operator()(i, j);
+
+    for (size_t i = 0; i < field.size(); i++) {
+        for (size_t j = 0; j < field[1].size(); j++) {
+            std::cout << field[i][j].GetSumbol();
         }
         std::cout << "\n";
     }
 }
 
-void ISXManager::ConsoleManager::PrintMessage(const std::string& message)
+void ConsoleManager::PrintMessage(const std::string& message)
 {
+
     std::cout << message;
 }
+
+
+} // namespace ISXManager

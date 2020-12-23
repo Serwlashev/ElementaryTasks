@@ -22,7 +22,7 @@ int ISXConverterParser::Parser::ParseToInt(const std::string& number)
 {
 	int res = 0;
 
-	if (!number.empty() || number != " " && number.size() < 9 && IsValid(number)) {
+	if (!number.empty() && number != " " && number.size() < 10 && IsValid(number)) {
 
 		res = std::stoi(number);
 	}

@@ -144,16 +144,22 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="ChessboardFactorycpp" />
     <ClCompile Include="ChessboardParser.cpp" />
     <ClCompile Include="ConsoleManager.cpp" />
+    <ClCompile Include="FieldFactory.cpp" />
+    <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Cell.h" />
+    <ClInclude Include="ChessboardFactory.h" />
     <ClInclude Include="ChessboardParser.h" />
     <ClInclude Include="ConsoleManager.h" />
+    <ClInclude Include="FieldFactory.h" />
+    <ClInclude Include="Chessboard.h" />
     <ClInclude Include="Field.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

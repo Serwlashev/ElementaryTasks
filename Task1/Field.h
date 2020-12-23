@@ -1,26 +1,25 @@
 #pragma once
-#include "Cell.h"
 #include <vector>
 
-using std::vector;
-using ISXCell::Cell;
+#include "Cell.h"
 
 namespace ISXField
 {
 	class Field
 	{
 	public:
-		Field(unsigned int& height, unsigned int& width);
+		Field(const unsigned int height, const unsigned int width);
+		virtual unsigned int get_height() const = 0;
+		virtual unsigned int get_width() const = 0;
+		virtual char operator ()(const size_t height, const size_t width) const = 0;
 
-		unsigned int get_height() const;
-		unsigned int get_width() const;
-
-		char operator() (const int& height, const int& width) const;
-	private:
-		vector<vector<Cell>> FillField(const unsigned int& height, const unsigned int& width);
-
-		vector<vector<Cell>> m_field;
+		std::vector<std::vector<ISXCell::Cell>> GetField() const;
+	protected:
 		unsigned int m_height;
 		unsigned int m_width;
+
+		std::vector<std::vector<ISXCell::Cell>> m_field;
+
 	};
+
 }

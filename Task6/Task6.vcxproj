@@ -25,7 +25,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoscowMode.cpp" />
     <ClCompile Include="PiterMode.cpp" />
-    <ClCompile Include="ProgramTickets.cpp" />
+    <ClCompile Include="ProgramTicket.cpp" />
     <ClCompile Include="TicketParser.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -34,7 +34,7 @@
     <ClInclude Include="LuckyTicketView.h" />
     <ClInclude Include="MoscowMode.h" />
     <ClInclude Include="PiterMode.h" />
-    <ClInclude Include="ProgramTickets.h" />
+    <ClInclude Include="ProgramTicket.h" />
     <ClInclude Include="TicketParser.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
