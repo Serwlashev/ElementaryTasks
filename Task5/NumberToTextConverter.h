@@ -3,9 +3,9 @@
 #include <string>
 #include <map>
 #include <list>
+
 namespace ISXNumberConverter
 {
-
 	class NumberToTextConverter
 	{
 	public:

@@ -6,10 +6,9 @@ ISXApp::EnvelopeComparer::EnvelopeComparer()
 		"All parameters must be greater than zero, enter them only in numbers.They can also be floating point numbers.\n\n";
 }
 
-void ISXApp::EnvelopeComparer::Start(const int& argc, char** argv)
+void  ISXApp::EnvelopeComparer::Start(const int& argc, char** argv)
 {
 	bool should_continue = true;
-
 	if (argc == 1) {
 		EnvelopeView::PrintMessage(m_instruction);
 	}

@@ -17,7 +17,10 @@ string ISXProgrFibonacci::ProgramFibonacci::GetFibonacciNumbers(const int& argc,
 
 		if (!numbers.empty()) {
 			for (auto it = numbers.begin(); it != numbers.end(); it++) {
-				result.append(std::to_string(*it) + " ");
+				if (it > numbers.begin()) {
+					result.append(", ");
+				}
+				result.append(std::to_string(*it));
 			}
 		}
 		else {

@@ -20,8 +20,10 @@ string ISXProgramPow::ProgramPow::GetStringPows(const int& argc, char** argv)
 			Generator start;
 			Generator end(number);
 			for (auto it = start; it <= end; ++it) {
+				if (it > start) {
+					result += ", ";
+				}
 				result += std::to_string(*it);
-				result += ", ";
 			}
 		}
 		else {

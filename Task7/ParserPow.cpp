@@ -16,7 +16,7 @@ unsigned long long ISXPowParser::Parser::ParseULL(const std::string& number)
 }
 bool ISXPowParser::Parser::IsValid(const std::string& number)
 {
-	if (number.size() > 10) {
+	if (number.size() > max_border) {
 		return false;
 	}
 

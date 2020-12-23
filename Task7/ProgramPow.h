@@ -17,7 +17,6 @@ namespace ISXProgramPow
 		string GetStringPows(const int& argc, char** argv);
 
 	private:
-
 		std::string m_instruction;
 	};
 }

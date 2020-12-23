@@ -29,9 +29,9 @@ namespace ISXChessboard {
 		return '\n';
 	}
 	
-	vector<vector<ISXCell::Cell>> ChessBoard::FillField() {
+	std::vector<std::vector<ISXCell::Cell>> ChessBoard::FillField() {
 	
-		vector<vector<ISXCell::Cell>> tmp_field(m_height, vector<ISXCell::Cell>(m_width));
+		std::vector<std::vector<ISXCell::Cell>> tmp_field(m_height, std::vector<ISXCell::Cell>(m_width));
 		for (size_t i = 0; i < m_height; i++) {
 			for (size_t j = 0; j < m_width; j++) {		
 				if (i % 2 == 0) {

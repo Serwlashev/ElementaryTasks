@@ -3,9 +3,6 @@
 
 #include "Field.h"
 
-using std::vector;
-
-
 namespace ISXChessboard {
 
     class ChessBoard : public ISXField::Field
@@ -18,7 +15,7 @@ namespace ISXChessboard {
         char operator ()(const size_t height, const size_t width) const override;
     
     private:
-        vector<vector<ISXCell::Cell>> FillField();
+        std::vector<std::vector<ISXCell::Cell>> FillField();
     };
 
 }

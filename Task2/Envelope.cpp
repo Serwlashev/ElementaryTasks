@@ -14,6 +14,16 @@ ISXEnvelope::Envelope::Envelope(double height, double width)
 	}
 }
 
+double ISXEnvelope::Envelope::GetHeight() const
+{
+	return m_height;
+}
+
+double ISXEnvelope::Envelope::GetWidth() const
+{
+	return m_width;
+}
+
 bool ISXEnvelope::operator<(const Envelope& env1, const Envelope& env2)
 {
 	//To avoid the influence of inaccuracy double type, round off the entered number to three digits after the point and then compare them

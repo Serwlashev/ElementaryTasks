@@ -2,7 +2,7 @@
 
 bool ISXTicketView::LuckyTicketView::WantContinue()
 {
-    string user_wish;
+    std::string user_wish;
     std::cout << "\nDo you want to continue? (Please, enter \"y\" or \"yes\" if you want or any other if not): ";
     std::getline(std::cin, user_wish);
 
@@ -17,14 +17,14 @@ bool ISXTicketView::LuckyTicketView::WantContinue()
     return false;
 }
 
-void ISXTicketView::LuckyTicketView::PrintMessage(const string& message)
+void ISXTicketView::LuckyTicketView::PrintMessage(const std::string& message)
 {
     std::cout << message;
 }
 
-string ISXTicketView::LuckyTicketView::GetStringValue(const string& message)
+std::string ISXTicketView::LuckyTicketView::GetStringValue(const std::string& message)
 {
-    string str = "";
+    std::string str = "";
 
     std::cout << message;
 

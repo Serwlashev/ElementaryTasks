@@ -230,3 +230,36 @@ TEST(LuckyTicketLengthTest, ShouldTrue) {
 
 	ASSERT_EQ(ticket_length, counter.GetTicketLength());
 }
+
+TEST(LuckyTicketLengthTest2, ShouldTrue) {
+	const unsigned int ticket_length = 6;
+	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Piter, ticket_length);
+
+	ASSERT_EQ(ticket_length, counter.GetTicketLength());
+}
+
+TEST(LuckyTicketCounterPiterTest, ShouldTrue) {
+	const unsigned int ticket_length = 6;
+	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Piter, ticket_length);
+
+	std::vector<std::string> tickets;
+	tickets.push_back("457369");
+	tickets.push_back("143264");
+	tickets.push_back("573144");
+	tickets.push_back("620477");
+
+	ASSERT_EQ(4, counter.CountTickets(tickets));
+}
+
+TEST(LuckyTicketCounterPiterFalseTest, ShouldTrue) {
+	const unsigned int ticket_length = 6;
+	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Piter, ticket_length);
+
+	std::vector<std::string> tickets;
+	tickets.push_back("123456");
+	tickets.push_back("23");
+	tickets.push_back("3679323234");
+	tickets.push_back("778323");
+
+	ASSERT_EQ(0, counter.CountTickets(tickets));
+}

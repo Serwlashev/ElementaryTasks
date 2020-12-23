@@ -9,6 +9,9 @@ namespace ISXEnvelope
 	public:
 		Envelope(double length, double width);
 
+		double GetHeight() const;
+		double GetWidth() const;
+
 		friend bool operator <(const Envelope& env1, const Envelope& env2);
 		friend bool operator >(const Envelope& env1, const Envelope& env2);
 

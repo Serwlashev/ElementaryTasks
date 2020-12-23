@@ -5,8 +5,6 @@
 
 #include "Cell.h"
 
-
-
 namespace ISXManager {
 
     class ConsoleManager {
@@ -14,7 +12,6 @@ namespace ISXManager {
         static void DrawField(const std::vector<std::vector<ISXCell::Cell>>& field);
     
         static void PrintMessage(const std::string & message);
-    
     };
 
 }

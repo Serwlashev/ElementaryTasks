@@ -11,6 +11,8 @@ namespace ISXGenerator
 		Generator& operator++();
 		bool operator <= (const Generator& gen) const;
 		bool operator >= (const Generator& gen) const;
+		bool operator < (const Generator& gen) const;
+		bool operator > (const Generator& gen) const;
 		unsigned long long operator*() const;
 		unsigned long long GetMaxNumber() const;
 		static unsigned long long GetMaxAllowedNumber();

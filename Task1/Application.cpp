@@ -16,7 +16,7 @@ namespace ISXApplication {
 		}
 	}
 
-	std::vector<vector<ISXCell::Cell>> Application::GetField() const
+	std::vector<std::vector<ISXCell::Cell>> Application::GetField() const
 	{
 		return m_field.get()->GetField();
 	}
