@@ -8,6 +8,7 @@ namespace ISXChessParser {
         static unsigned int ParseToUI(const std::string& number);
     
     private:
+        static const int max_allowed_length = 9;
         static bool HasOnlyDigits(const std::string& number);
     };
 

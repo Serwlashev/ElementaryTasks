@@ -11,15 +11,13 @@ namespace ISXField
 		Field(const unsigned int height, const unsigned int width);
 		virtual unsigned int get_height() const = 0;
 		virtual unsigned int get_width() const = 0;
-		virtual char operator ()(const size_t height, const size_t width) const = 0;
 
 		std::vector<std::vector<ISXCell::Cell>> GetField() const;
+
 	protected:
 		unsigned int m_height;
 		unsigned int m_width;
 
 		std::vector<std::vector<ISXCell::Cell>> m_field;
-
 	};
-
 }

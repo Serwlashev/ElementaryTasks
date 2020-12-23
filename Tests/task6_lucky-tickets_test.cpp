@@ -1,9 +1,9 @@
 #include "pch.h"
-#include "../Task6/TicketAnalyzer.h"
-#include "../Task6/Piteranalyzer.h"
-#include "../Task6/MoscowAnalyzer.h"
-#include "../Task6/LuckyTicketCounter.h"
-#include "../Task6/TicketParser.h"
+#include "TicketAnalyzer.h"
+#include "Piteranalyzer.h"
+#include "MoscowAnalyzer.h"
+#include "LuckyTicketCounter.h"
+#include "TicketParser.h"
 
 TEST(MoscowModeTest1, ShouldTrue) {
 	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);

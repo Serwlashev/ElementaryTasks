@@ -24,17 +24,26 @@ double ISXEnvelope::Envelope::GetWidth() const
 	return m_width;
 }
 
+int ISXEnvelope::Envelope::GetRoundingMultiplier()
+{
+	return multiplier_for_rounding;
+}
+
 bool ISXEnvelope::operator<(const Envelope& env1, const Envelope& env2)
 {
 	//To avoid the influence of inaccuracy double type, round off the entered number to three digits after the point and then compare them
-	return std::round(env1.m_height * 1000) / 1000 < std::round(env2.m_height * 1000) / 1000 &&
-			std::round(env1.m_width * 1000) / 1000 < std::round(env2.m_width * 1000) / 1000;
+	return std::round(env1.m_height * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier()
+		< std::round(env2.m_height * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier() &&
+			std::round(env1.m_width * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier()
+		< std::round(env2.m_width * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier();
 }
 
 bool ISXEnvelope::operator>(const Envelope& env1, const Envelope& env2)
 {
 	//To avoid the influence of inaccuracy double type, round off the entered number to three digits after the point and then compare them
-	return std::round(env1.m_height * 1000) / 1000 > std::round(env2.m_height * 1000) / 1000 &&
-			std::round(env1.m_width * 1000) / 1000 > std::round(env2.m_width * 1000) / 1000;
+	return std::round(env1.m_height * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier() >
+		std::round(env2.m_height * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier() &&
+			std::round(env1.m_width * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier() >
+		std::round(env2.m_width * Envelope::GetRoundingMultiplier()) / Envelope::GetRoundingMultiplier();
 
 }

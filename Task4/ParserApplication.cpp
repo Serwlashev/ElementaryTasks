@@ -4,15 +4,15 @@ ISXApplication::ParserApplication::ParserApplication()
 {
 	parser = std::make_unique<FileParser>();
 	m_instructions = "Pass to the main class call the path to the file and line to count and we'll count all lines in the given file\n"
-		"or the path to the file, a line which should be replaced and a line for replacing and we'll replace all of them";
+		"or the path to the file, a line which should be replaced and a line for replacing and we'll replace all of them\n";
 }
 
 void ISXApplication::ParserApplication::Parse(const int& argc, char** argv)
 {
-	if (argc == 3) {
+	if (argc == should_count_lines) {
 		CountLineOccurences(argv[1], argv[2]);
 	}
-	else if (argc == 4) {
+	else if (argc == should_replace_string) {
 		ReplaceLine(argv[1], argv[2], argv[3]);
 	}
 	else {

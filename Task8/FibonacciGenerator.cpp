@@ -1,17 +1,15 @@
 #include "FibonacciGenerator.h"
-unsigned long long ISXFibonacci::FibonacciGenerator::m_max_allowed_number = (unsigned long long)4294967296;
-unsigned long long ISXFibonacci::FibonacciGenerator::m_min_allowed_number = (unsigned long long)1;
 
 ISXFibonacci::FibonacciGenerator::FibonacciGenerator()
 {
-	m_min = 0;
-	m_max = 0;
-	m_current = 0;
+	m_min = 0ULL;
+	m_max = 0ULL;
+	m_current = 0ULL;
 }
 
 ISXFibonacci::FibonacciGenerator::FibonacciGenerator(unsigned long long max)
 {
-	m_min = m_current = 0;
+	m_min = m_current = 0ULL;
 	m_max = max;
 }
 
@@ -58,8 +56,8 @@ unsigned long long ISXFibonacci::FibonacciGenerator::GetMinAlowedNumber()
 
 unsigned long long ISXFibonacci::FibonacciGenerator::FindNum(unsigned long long number, bool is_previous)
 {
-	unsigned long long previous = 1;
-	unsigned long long current = 1;
+	unsigned long long previous = 1ULL;
+	unsigned long long current = 1ULL;
 	unsigned long long tmp;
 
 	while (current < number) {

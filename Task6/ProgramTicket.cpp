@@ -5,14 +5,14 @@ ISXProgramTicket::ProgramTicket::ProgramTicket()
 	m_instruction = "Pass to the main class call path to the file with algorythm for counting and we'll count lucky tickets according to it";
 }
 
-void ISXProgramTicket::ProgramTicket::Start(const int& argc, char** argv)
+void ISXProgramTicket::ProgramTicket::Start(const int argc, char** argv)
 {
 	bool want_continue = true;
-	std::string ticket = "";
+	std::string ticket;
 	std::vector<std::string> tickets;
 	ISXAnalyzer::TicketsMode ticket_mode;
 
-	if (argc != 2) {
+	if (argc != num_required_params) {
 		ISXTicketView::LuckyTicketView::PrintMessage(m_instruction);
 		return;
 	}
@@ -40,7 +40,7 @@ void ISXProgramTicket::ProgramTicket::Start(const int& argc, char** argv)
 		want_continue = ISXTicketView::LuckyTicketView::WantContinue();
 	}
 
-	ISXTicketView::LuckyTicketView::ShowNumberTickets(GetNumLuckyTickets(tickets));
+	ISXTicketView::LuckyTicketView::PrintMessage(GetNumLuckyTickets(tickets));
 
 	ISXTicketView::LuckyTicketView::PrintMessage("Goodbay!\n");
 }
@@ -86,10 +86,15 @@ std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> ISXProgramTicket::ProgramTi
 
 std::string ISXProgramTicket::ProgramTicket::GetNumLuckyTickets(const std::vector<std::string>& tickets)
 {
+	std::string result;
+
 	if (m_ticket_counter) {
-		return std::to_string(m_ticket_counter.get()->CountTickets(tickets.begin(), tickets.end()));
+		int num_tickets = m_ticket_counter.get()->CountTickets(tickets.begin(), tickets.end());
+		result += std::to_string(num_tickets);
+		result += num_tickets > 1 ? " lucky tickets were passed" : " lucky ticket was passed";
 	}
 	else {
-		return "0";
+		result = "Cannot count lucky tickets, you passed wrong parameters for the ticket counter";
 	}
+	return result;
 }

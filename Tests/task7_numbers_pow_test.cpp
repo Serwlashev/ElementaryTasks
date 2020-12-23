@@ -1,7 +1,7 @@
 #include "pch.h"
-#include "../Task7/Generator.h"
-#include "../Task7/ParserPow.h"
-#include "../Task7/ProgramPow.h"
+#include "Generator.h"
+#include "ParserPow.h"
+#include "ProgramPow.h"
 
 TEST(ParserTest1, ShouldTrue) {
 	std::string number_str = "23423";

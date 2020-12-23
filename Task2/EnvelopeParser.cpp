@@ -4,7 +4,7 @@ double ISXEnvelopeParser::EnvelopeParser::ParseToDouble(const std::string& numbe
 {
 	double res = -1;
 
-	if (!number.empty() && number != "" && number != " " && number.size() < 15 && IsValid(number)) {
+	if (!number.empty() && number != "" && number != " " && number.size() < max_allowed_length && IsValid(number)) {
 		res = stod(number);
 	}
 

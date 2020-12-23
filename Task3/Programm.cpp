@@ -18,16 +18,16 @@ ISXProg::TriangleStorage::~TriangleStorage()
     }
 }
 
-void ISXProg::TriangleStorage::Start(const int& argc, char** argv)
+void ISXProg::TriangleStorage::Start(const int argc, char** argv)
 {
 	bool should_continue = true;
     vector<string> params_arr;
 
-    if (argc == 1) {
+    if (argc == empty_params_list) {
         ViewTriangle::PrintMessage(m_instruction);
     }
-    else if (argc == 5) {
-        for (int i = 1; i < 5; i++) {
+    else if (argc == num_required_params) {
+        for (int i = 1; i < num_required_params; i++) {
             params_arr.push_back(argv[i]);
         }
         AddNewTriangle(params_arr);
@@ -95,7 +95,7 @@ void ISXProg::TriangleStorage::ShowAllTriangles() const
 	}
 }
 
-Triangle* ISXProg::TriangleStorage::CreateTriangle(const std::string& name, const double& first_side, const double& second_side, const double& third_side)
+Triangle* ISXProg::TriangleStorage::CreateTriangle(const std::string& name, const double first_side, const double second_side, const double third_side)
 {
     if (CanCreateTriangle(name, first_side, second_side, third_side)) {
 
@@ -104,7 +104,7 @@ Triangle* ISXProg::TriangleStorage::CreateTriangle(const std::string& name, cons
     return nullptr;;
 }
 
-bool ISXProg::TriangleStorage::CanCreateTriangle(const std::string& name, const double& first_side, const double& second_side, const double& third_side) const
+bool ISXProg::TriangleStorage::CanCreateTriangle(const std::string& name, const double first_side, const double second_side, const double third_side) const
 {
 	if (!name.empty() && name != "" && name != " " && first_side > 0 && second_side > 0 && third_side > 0 &&
 		first_side + second_side > third_side && first_side + third_side > second_side && third_side + second_side > first_side) {
@@ -116,7 +116,7 @@ bool ISXProg::TriangleStorage::CanCreateTriangle(const std::string& name, const 
 std::vector<string> ISXProg::TriangleStorage::ExtractParamsFromString(const std::string& params) const
 {
     int count_params = 0;
-    std::string tmp_param = "";
+    std::string tmp_param;
     std::vector<string> result_params;
 
     for (size_t i = 0; i < params.length(); i++) {

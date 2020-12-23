@@ -1,6 +1,6 @@
 #include "MoscowAnalyzer.h"
 
-ISXMoscowAnalyzer::MoscowAnalyzer::MoscowAnalyzer(const unsigned int& ticket_length) : ISXAnalyzer::TicketAnalyzer(ticket_length) { }
+ISXMoscowAnalyzer::MoscowAnalyzer::MoscowAnalyzer(const unsigned int ticket_length) : ISXAnalyzer::TicketAnalyzer(ticket_length) { }
 
 bool ISXMoscowAnalyzer::MoscowAnalyzer::IsLuckyTicket(const std::string& ticket) const
 {

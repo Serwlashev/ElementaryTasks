@@ -6,7 +6,6 @@ namespace ISXChessboard {
 
 	ChessBoard::ChessBoard(unsigned int height, unsigned int width) : Field(height, width)
 	{
-	
 		m_field = FillField();
 	}
 	
@@ -19,16 +18,7 @@ namespace ISXChessboard {
 	
 		return m_width;
 	}
-	
-	char ChessBoard::operator ()(const size_t height, const size_t width) const {
-	
-		if (height >= 0 && height < m_height && width >= 0 && width < m_width) {
-			return m_field[height][width].GetSumbol();
-		}
-	
-		return '\n';
-	}
-	
+
 	std::vector<std::vector<ISXCell::Cell>> ChessBoard::FillField() {
 	
 		std::vector<std::vector<ISXCell::Cell>> tmp_field(m_height, std::vector<ISXCell::Cell>(m_width));

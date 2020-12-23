@@ -6,10 +6,9 @@
 #include "EnvelopeView.h"
 #include "EnvelopeParser.h"
 
-using ISXEenvConsole::EnvelopeView;
+using ISXEnvConsole::EnvelopeView;
 using ISXEnvelopeParser::EnvelopeParser;
 using ISXEnvelope::Envelope;
-
 
 namespace ISXApp
 {
@@ -18,10 +17,13 @@ namespace ISXApp
 	public:
 		EnvelopeComparer();
 
-		void Start(const int& argc, char** argv);
+		void Start(const int argc, char** argv);
 
 	private:
-		std::unique_ptr<Envelope> RequestEnvelopeInput(const std::string envelope_name);
+		const int num_required_params = 5;
+		const int empty_params = 1;
+
+		std::unique_ptr<Envelope> RequestEnvelopeInput(const std::string& envelope_name);
 		std::unique_ptr<Envelope> CreateEnvelope(const std::string& str_height, const std::string& str_width);
 		void CompareEnvelopes() const;
 

@@ -39,7 +39,7 @@
     <ClCompile Include="FieldFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChessboardFactorycpp">
+    <ClCompile Include="ChessboardFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

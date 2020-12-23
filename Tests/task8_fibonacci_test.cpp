@@ -1,7 +1,7 @@
 #include "pch.h"
-#include "../Task8/FibonacciGenerator.h"
-#include "../Task8/ProgramFibonacci.h"
-#include "../Task8/ParserFibonacci.h"
+#include "FibonacciGenerator.h"
+#include "ProgramFibonacci.h"
+#include "ParserFibonacci.h"
 
 
 TEST(FibonacciParserTest1, ShouldTrue) {

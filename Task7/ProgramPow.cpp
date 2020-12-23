@@ -5,11 +5,11 @@ ISXProgramPow::ProgramPow::ProgramPow()
 	m_instruction = "Enter number from 1 to 4294967296 and we'll print a series of natural numbers whose square is less than a given number"; 
 }
 
-string ISXProgramPow::ProgramPow::GetStringPows(const int& argc, char** argv)
+std::string ISXProgramPow::ProgramPow::GetStringPows(const int argc, char** argv)
 {
-	string result = "";
+	std::string result;
 
-	if (argc != 2) {
+	if (argc != num_required_params) {
 		result = m_instruction;
 	}
 	else {
@@ -30,7 +30,6 @@ string ISXProgramPow::ProgramPow::GetStringPows(const int& argc, char** argv)
 			result = m_instruction;
 		}
 	}
-	
 
 	return result;
 }

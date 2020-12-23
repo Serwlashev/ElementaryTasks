@@ -1,7 +1,7 @@
 #include "pch.h"
-#include "../Task5/NumberConverter.h"
-#include "../Task5/NumberToTextConverter.h"
-#include "../Task5/Parser.h"
+#include "NumberConverter.h"
+#include "NumberToTextConverter.h"
+#include "Parser.h"
 
 TEST(ParserValidationTest, ShouldTrue) {
 	std::string number1 = "1234";

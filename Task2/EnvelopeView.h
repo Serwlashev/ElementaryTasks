@@ -3,7 +3,7 @@
 #include <string>
 using std::string;
 
-namespace ISXEenvConsole
+namespace ISXEnvConsole
 {
 	class EnvelopeView
 	{

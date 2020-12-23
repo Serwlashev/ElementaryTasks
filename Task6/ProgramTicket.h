@@ -18,10 +18,12 @@ namespace ISXProgramTicket
 	public:
 		ProgramTicket();
 
-		void Start(const int& argc, char** argv1);
+		void Start(const int argc, char** argv1);
 		std::string GetNumLuckyTickets(const std::vector<std::string>& tickets);
 
 	private:
+		const int num_required_params = 2;
+
 		std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> CreateTicketsCounter(ISXAnalyzer::TicketsMode mode);
 		ISXAnalyzer::TicketsMode ReadAlgorythmFromFile(const std::string& path);
 

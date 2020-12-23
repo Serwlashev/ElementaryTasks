@@ -8,7 +8,7 @@ namespace ISXTriangle
 	class Triangle
 	{
 	public:
-		Triangle(std::string name, double first_side, double second_side, double third_side);
+		Triangle(const std::string& name, double first_side, double second_side, double third_side);
 
 		friend bool operator >(const Triangle& tr1, const Triangle& tr2);
 		friend bool operator <(const Triangle& tr1, const Triangle& tr2);

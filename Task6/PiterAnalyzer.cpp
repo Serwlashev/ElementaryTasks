@@ -1,6 +1,6 @@
 #include "PiterAnalyzer.h"
 
-ISXPiterAnalyzer::PiterAnalyzer::PiterAnalyzer(const unsigned int& ticket_length) : TicketAnalyzer(ticket_length) { }
+ISXPiterAnalyzer::PiterAnalyzer::PiterAnalyzer(const unsigned int ticket_length) : TicketAnalyzer(ticket_length) { }
 
 
 bool ISXPiterAnalyzer::PiterAnalyzer::IsLuckyTicket(const std::string& ticket) const

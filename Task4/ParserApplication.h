@@ -17,6 +17,9 @@ namespace ISXApplication
 		void Parse(const int& argc, char** argv);
 
 	private:
+		const int should_count_lines = 3;
+		const int should_replace_string = 4;
+
 		void CountLineOccurences(const std::string& path, const std::string& line);
 		void ReplaceLine(const std::string& path, const std::string& search_line, const std::string& replacing_line);
 		

@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "../Task2/Envelope.h"
-#include "../Task2/EnvelopeParser.h"
+#include "Envelope.h"
+#include "EnvelopeParser.h"
 
 TEST(ParserTest, ShouldEqual) {
 	std::string num_str = "234.4";

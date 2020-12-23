@@ -144,7 +144,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Cell.cpp" />
-    <ClCompile Include="ChessboardFactorycpp" />
+    <ClCompile Include="ChessboardFactory.cpp" />
     <ClCompile Include="ChessboardParser.cpp" />
     <ClCompile Include="ConsoleManager.cpp" />
     <ClCompile Include="FieldFactory.cpp" />

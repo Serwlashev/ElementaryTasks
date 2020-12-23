@@ -5,13 +5,13 @@ ISXConverter::NumberConverter::NumberConverter()
 	m_converter = std::make_unique<ISXNumberConverter::NumberToTextConverter>();
 }
 
-std::string ISXConverter::NumberConverter::ShowNumberAsText(const int& argc, char** argv)
+std::string ISXConverter::NumberConverter::ShowNumberAsText(const int argc, char** argv)
 {
-	std::string result = "";
-	if (argc == 1) {
+	std::string result;
+	if (argc == params_not_passed) {
 		result = "You can pass an integer number to the main class call and we translate it into the text\n";
 	}
-	else if (argc > 2) {
+	else if (argc != num_required_params) {
 		result = "You passed wrong number of arguments!\n";
 	}
 	else {
@@ -22,22 +22,23 @@ std::string ISXConverter::NumberConverter::ShowNumberAsText(const int& argc, cha
 
 std::string ISXConverter::NumberConverter::ConvertNumberToText(const std::string& value)
 {
-	std::string result = "";
+	std::string text_number;
+
 	if (ISXConverterParser::Parser::IsValid(value)) {
 		int number = ISXConverterParser::Parser::ParseToInt(value);
 
 		if (m_converter) {
-			result = m_converter.get()->Convert(number);
+			text_number = m_converter.get()->Convert(number);
 		}
 		else{
-			result = "Cannot create an instance of the number converter!\n";
+			text_number = "Cannot create an instance of the number converter!\n";
 		}
 	}
 	else {
-		result = "You passed wrong number!";
+		text_number = "You passed wrong number!";
 	}
 
-	return result;
+	return text_number;
 }
 
 

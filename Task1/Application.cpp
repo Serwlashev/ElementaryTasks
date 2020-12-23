@@ -6,7 +6,7 @@ namespace ISXApplication {
 
 	void Application::Start(const int argc, char** argv) {
 	
-		if (argc == 3) {
+		if (argc == num_required_params) {
 			m_field = m_board_creator.Create(argv[1], argv[2]);
 	
 			PrintField();

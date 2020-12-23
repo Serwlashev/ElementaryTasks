@@ -8,7 +8,8 @@ namespace ISXBoardFactory
 	class ChessboardFactory : public ISXFactory::FieldFactory
 	{
 	public:
-		std::unique_ptr<ISXField::Field> Create(const std::string& height, const std::string& width) override;
+		std::unique_ptr<ISXField::Field> Create(const std::string& height, 
+			const std::string& width) override;
 
 	};
 

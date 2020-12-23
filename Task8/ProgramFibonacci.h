@@ -4,9 +4,7 @@
 #include "FibonacciGenerator.h"
 #include "ParserFibonacci.h"
 
-using std::string;
-using std::vector;
-using ISXFibonacci::FibonacciGenerator;
+
 using ISXParseFibonacci::ParserFibonacci;
 
 namespace ISXProgrFibonacci
@@ -16,10 +14,12 @@ namespace ISXProgrFibonacci
 	public:
 		ProgramFibonacci();
 
-		string GetFibonacciNumbers(const int& argc, char** argv);
+		std::string GetFibonacciNumbers(const int argc, char** argv);
 
 	private:
-		vector<unsigned long long> GetNumbers(string start, string end);
+		const int num_requried_params = 3;
+
+		std::vector<unsigned long long> GetNumbers(const std::string& start, const std::string& end);
 
 		std::string m_instruction;
 	};

@@ -8,7 +8,7 @@ std::unique_ptr<ISXField::Field> ISXBoardFactory::ChessboardFactory::Create(cons
 	converted_height = ISXChessParser::ChessboardParser::ParseToUI(height);
 	converted_width = ISXChessParser::ChessboardParser::ParseToUI(width);
 
-	if (converted_height > 0 && converted_width > 0) {
+	if (converted_height > 0U && converted_width > 0U) {
 
 		std::unique_ptr<ISXChessboard::ChessBoard> field = std::make_unique<ISXChessboard::ChessBoard>(converted_height, converted_width);
 

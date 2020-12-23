@@ -2,5 +2,5 @@
 
 void ISXFileParserView::FileParserView::PrintMessage(const std::string& message)
 {
-	std::cout << message;
+	std::cout << message << "\n";
 }

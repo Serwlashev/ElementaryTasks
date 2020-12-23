@@ -69,16 +69,16 @@ std::string ISXNumberConverter::NumberToTextConverter::ConvertFromThreeDigits(in
 {
 	std::string result = "";
 
-	if (number >= BORDER_100) {	// First of all we should separate handreds from number
-		result.append(m_library.at(number / BORDER_100) + " ");
-		result.append(m_library.at(BORDER_100) + " ");
-		number %= BORDER_100;
+	if (number >= HUNDRED_DELIMITER) {	// First of all we should separate handreds from number
+		result.append(m_library.at(number / HUNDRED_DELIMITER) + " ");
+		result.append(m_library.at(HUNDRED_DELIMITER) + " ");
+		number %= HUNDRED_DELIMITER;
 	}
-	if (number > 20) {			// If number has dozens we separate them
-		result.append(m_library.at((number / 10) * 10) + " ");
-		number %= 10;
+	if (number > LIBRARY_DELIMITER) {			// If number has dozens we separate them
+		result.append(m_library.at((number / DOZENS_DELIMITER) * DOZENS_DELIMITER) + " ");
+		number %= DOZENS_DELIMITER;
 	}
-	if (number >= 1) {			// If number is smaller than twenty he has definition in library
+	if (number >= MIN_DELIMITER) {			// If number is smaller than twenty he has definition in library
 		result.append(m_library.at(number) + " ");
 	}
 
@@ -90,8 +90,8 @@ std::list<int> ISXNumberConverter::NumberToTextConverter::PushToList(int number)
 	std::list<int> number_list;
 
 	while (number) {
-		number_list.push_front(number % 1000);
-		number /= 1000;
+		number_list.push_front(number % THOUSAND_DELIMITER);
+		number /= THOUSAND_DELIMITER;
 	}
 
 	return number_list;

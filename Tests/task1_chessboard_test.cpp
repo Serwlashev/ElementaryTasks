@@ -1,9 +1,9 @@
 #include "pch.h"
-#include "../Task1/Cell.h"
-#include "../Task1/Chessboard.h"
-#include "../Task1/Application.h"
-#include "../Task1/ChessboardFactory.h"
-#include "../Task1/ChessboardParser.h"
+#include "Cell.h"
+#include "Chessboard.h"
+#include "Application.h"
+#include "ChessboardFactory.h"
+#include "ChessboardParser.h"
 
 TEST(CellSetGetTest, ShouldEqual) {
 	ISXCell::Cell cell;
@@ -24,21 +24,6 @@ TEST(ChessBoardGetTest, ShouldEqual) {
 
 	ASSERT_EQ(size, board.get_height());
 	ASSERT_EQ(size, board.get_width());
-}
-
-TEST(ChessBoardParhethesesTest, ShouldEqual) {
-	const unsigned int size = 5;
-	ISXChessboard::ChessBoard board(size, size);
-
-	const char star = '*';
-	const char space = ' ';
-
-	ASSERT_EQ(board(0, 0), star);		
-	ASSERT_EQ(board(0, 1), space);		
-	ASSERT_EQ(board(1, 4), space);		
-	ASSERT_EQ(board(4, 4), star);
-	ASSERT_EQ(board(2, 3), space);
-	ASSERT_EQ(board(3, 3), star);
 }
 
 TEST(FactoryTest, ShouldEqual) {

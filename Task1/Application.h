@@ -15,6 +15,8 @@ namespace ISXApplication {
         std::vector<std::vector<ISXCell::Cell>> GetField() const;
         
     private:
+        const int num_required_params = 3;
+
         void PrintField() const;
     
         std::unique_ptr<ISXField::Field> m_field;

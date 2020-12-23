@@ -12,12 +12,14 @@ namespace ISXNumberConverter
 		NumberToTextConverter();
 
 		std::string Convert(int number);
+
 	private:
-		enum NumericDigits {
-			BILLION = 1000000000,
-			MILLION = 1000000,
-			THOUSAND = 1000,
-			BORDER_100 = 100,
+		enum NumericDigitsDelimiters {
+			THOUSAND_DELIMITER = 1000,
+			HUNDRED_DELIMITER = 100,
+			LIBRARY_DELIMITER = 20,		// Bigger dozens are not included in the library
+			DOZENS_DELIMITER = 10,
+			MIN_DELIMITER = 1
 		};
 
 		void InitLibrary();

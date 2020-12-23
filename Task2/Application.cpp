@@ -6,13 +6,13 @@ ISXApp::EnvelopeComparer::EnvelopeComparer()
 		"All parameters must be greater than zero, enter them only in numbers.They can also be floating point numbers.\n\n";
 }
 
-void  ISXApp::EnvelopeComparer::Start(const int& argc, char** argv)
+void  ISXApp::EnvelopeComparer::Start(const int argc, char** argv)
 {
 	bool should_continue = true;
-	if (argc == 1) {
+	if (argc == empty_params) {
 		EnvelopeView::PrintMessage(m_instruction);
 	}
-	else if (argc == 5) {
+	else if (argc == num_required_params) {
 		m_first_envelope = CreateEnvelope(argv[1], argv[2]);
 
 		if (m_first_envelope) {							// If user passed only empty string we shouldn't ask for the second envelope and check them
@@ -45,10 +45,10 @@ void  ISXApp::EnvelopeComparer::Start(const int& argc, char** argv)
 	EnvelopeView::PrintMessage("Goodbay!\n");
 }
 
-std::unique_ptr<Envelope> ISXApp::EnvelopeComparer::RequestEnvelopeInput(const std::string envelope_name)
+std::unique_ptr<Envelope> ISXApp::EnvelopeComparer::RequestEnvelopeInput(const std::string& envelope_name)
 {
-	std::string str_height = "";
-	std::string str_width = "";
+	std::string str_height;
+	std::string str_width;
 
 	EnvelopeView::PrintMessage("\nEnter parameters of the " + envelope_name + "\n");
 

@@ -1,17 +1,14 @@
 #include "Generator.h"
 
-unsigned long long ISXGenerator::Generator::m_max_allowed_number = (unsigned long long)4294967296;
-unsigned long long ISXGenerator::Generator::m_min_allowed_number = (unsigned long long)1;
-
 ISXGenerator::Generator::Generator()
 {
-	m_current = 1;
-	m_max = 1;
+	m_current = 1ULL;
+	m_max = 1ULL;
 }
 
 ISXGenerator::Generator::Generator(unsigned long long max) 
 {
-	m_current = 1;
+	m_current = 1ULL;
 	m_max = max;
 }
 

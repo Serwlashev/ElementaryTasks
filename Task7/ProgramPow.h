@@ -4,7 +4,6 @@
 #include "ParserPow.h"
 
 using ISXPowParser::Parser;
-using std::string;
 using ISXGenerator::Generator;
 
 namespace ISXProgramPow
@@ -14,9 +13,11 @@ namespace ISXProgramPow
 	public:
 		ProgramPow();
 
-		string GetStringPows(const int& argc, char** argv);
+		std::string GetStringPows(const int argc, char** argv);
 
 	private:
+		const int num_required_params = 2;
+
 		std::string m_instruction;
 	};
 }
