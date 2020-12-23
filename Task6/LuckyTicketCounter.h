@@ -2,23 +2,22 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iterator>
 
-#include "MoscowMode.h"
-#include "PiterMode.h"
+#include "MoscowAnalyzer.h"
+#include "PiterAnalyzer.h"
 
 namespace ISXLuckyTickets
 {
 	class LuckyTicketCounter
 	{
 	public:
-		LuckyTicketCounter(const ISXMode::TicketsMode& mode, const unsigned int& ticket_length);
-
-		int CountTickets(const std::vector<std::string>& tickets);
-		unsigned int GetTicketLength();
+		LuckyTicketCounter(std::unique_ptr<ISXAnalyzer::TicketAnalyzer> analyzer);
+		
+		int CountTickets(const std::vector<std::string>::const_iterator& begin, const std::vector<std::string>::const_iterator& end);
 	private:
-		std::unique_ptr<ISXMode::CountingMode> CreateMode(const ISXMode::TicketsMode& mode, const unsigned int& ticket_length);
 
-		std::unique_ptr<ISXMode::CountingMode> m_counting_mode;
+		std::unique_ptr<ISXAnalyzer::TicketAnalyzer> m_analyzer;
 	};
 }
 

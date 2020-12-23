@@ -2,8 +2,8 @@
 #include <string>
 #include <fstream>
 #include <io.h>
-
-using std::string;
+#include <memory>
+#include "ReplacerForString.h"
 
 namespace ISXParse
 {
@@ -12,15 +12,17 @@ namespace ISXParse
 	public:
 		FileParser();
 
-		int CountNumberOfOccurenses(const string& path, const string& line_to_count);
-		bool ReplaceStringToOther(const string& path, const string& search_line, const string& replacing_line);
+		int CountNumberOfOccurenses(const std::string& path, const std::string& line_to_count);
+		bool ReplaceStringToOther(const std::string& path, const std::string& search_line, const std::string& replacing_line);
 
 	private:
-		bool RenameFileToDefault(const string& old_name, const string& file_name);
-		string GetFileName(const string& path);
-		string GetPathToFile(const string& full_path, const string& name);
+		bool RenameFileToDefault(const std::string& old_name, const std::string& file_name);
+		std::string GetFileName(const std::string& path);
+		std::string GetPathToFile(const std::string& full_path, const std::string& name);
+		std::unique_ptr<ISXReplacer::ReplacerForString>CreateReplacer(const std::string& search_line, const std::string& replacing_line);
 
-		string m_default_file_name;
+		std::string m_default_file_name;
+		std::unique_ptr<ISXReplacer::ReplacerForString> replacer;
 	};
 
 }

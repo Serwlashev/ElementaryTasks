@@ -1,9 +1,9 @@
-#include "PiterMode.h"
+#include "PiterAnalyzer.h"
 
-ISXPiterMode::PiterMode::PiterMode(const unsigned int& ticket_length) : CountingMode(ticket_length) { }
+ISXPiterAnalyzer::PiterAnalyzer::PiterAnalyzer(const unsigned int& ticket_length) : TicketAnalyzer(ticket_length) { }
 
 
-bool ISXPiterMode::PiterMode::IsLuckyTicket(const std::string& ticket) const
+bool ISXPiterAnalyzer::PiterAnalyzer::IsLuckyTicket(const std::string& ticket) const
 {
 	if (ticket.size() != m_ticket_length) {
 		return false;

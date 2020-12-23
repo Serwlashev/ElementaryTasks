@@ -1,120 +1,120 @@
 #include "pch.h"
-#include "../Task6/CountingMode.h"
-#include "../Task6/PiterMode.h"
-#include "../Task6/MoscowMode.h"
+#include "../Task6/TicketAnalyzer.h"
+#include "../Task6/Piteranalyzer.h"
+#include "../Task6/MoscowAnalyzer.h"
 #include "../Task6/LuckyTicketCounter.h"
 #include "../Task6/TicketParser.h"
 
 TEST(MoscowModeTest1, ShouldTrue) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "654456";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeTest2, ShouldTrue) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "365383";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeTest3, ShouldTrue) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "900261";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeTest4, ShouldTrue) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "110002";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeTest5, ShouldTrue) {
-	ISXMoscowMode::MoscowMode mode(4);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(4);
 	std::string ticket = "3609";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeTest6, ShouldTrue) {
-	ISXMoscowMode::MoscowMode mode(10);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(10);
 	std::string ticket = "4806759434";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeFalseTest1, ShouldFalse) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "110092";
 
-	ASSERT_NE(true, mode.IsLuckyTicket(ticket));
+	ASSERT_NE(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeFalseTest2, ShouldFalse) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "78667666";
 
-	ASSERT_NE(true, mode.IsLuckyTicket(ticket));
+	ASSERT_NE(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeFalseTest3, ShouldFalse) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "56500000";
 
-	ASSERT_NE(true, mode.IsLuckyTicket(ticket));
+	ASSERT_NE(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(MoscowModeFalseTest4, ShouldFalse) {
-	ISXMoscowMode::MoscowMode mode(6);
+	ISXMoscowAnalyzer::MoscowAnalyzer analyzer(6);
 	std::string ticket = "34";
 
-	ASSERT_NE(true, mode.IsLuckyTicket(ticket));
+	ASSERT_NE(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(PiterModeTest1, ShouldTrue) {
-	ISXPiterMode::PiterMode mode(6);
+	ISXPiterAnalyzer::PiterAnalyzer analyzer(6);
 	std::string ticket = "268235";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(PiterModeTest2, ShouldTrue) {
-	ISXPiterMode::PiterMode mode(2);
+	ISXPiterAnalyzer::PiterAnalyzer analyzer(2);
 	std::string ticket = "55";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(PiterModeTest3, ShouldTrue) {
-	ISXPiterMode::PiterMode mode(4);
+	ISXPiterAnalyzer::PiterAnalyzer analyzer(4);
 	std::string ticket = "3740";
 
-	ASSERT_EQ(true, mode.IsLuckyTicket(ticket));
+	ASSERT_EQ(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(PiterModeFalseTest1, ShouldFalse) {
-	ISXPiterMode::PiterMode mode(4);
+	ISXPiterAnalyzer::PiterAnalyzer analyzer(4);
 	std::string ticket = "34";
 
-	ASSERT_NE(true, mode.IsLuckyTicket(ticket));
+	ASSERT_NE(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(PiterModeFalseTest2, ShouldFalse) {
-	ISXPiterMode::PiterMode mode(4);
+	ISXPiterAnalyzer::PiterAnalyzer analyzer(4);
 	std::string ticket = "4546544";
 
-	ASSERT_NE(true, mode.IsLuckyTicket(ticket));
+	ASSERT_NE(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(PiterModeFalseTest3, ShouldFalse) {
-	ISXPiterMode::PiterMode mode(6);
+	ISXPiterAnalyzer::PiterAnalyzer analyzer(6);
 	std::string ticket = "666000";
 
-	ASSERT_NE(true, mode.IsLuckyTicket(ticket));
+	ASSERT_NE(true, analyzer.IsLuckyTicket(ticket));
 }
 
 TEST(TicketParserIsValidTest, ShouldTrue) {
@@ -198,68 +198,3 @@ TEST(TicketParserParseTest, WithoutErrs) {
 	ASSERT_NO_THROW(ISXTicketParser::TicketParser::ParseToUI(ticket6));
 }
 
-TEST(LuckyTicketCounterTest, ShouldTrue) {
-	const unsigned int ticket_length = 6;
-	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Moscow, ticket_length);
-
-	std::vector<std::string> tickets;
-	tickets.push_back("456456");
-	tickets.push_back("555555");
-	tickets.push_back("367934");
-	tickets.push_back("933456");
-
-	ASSERT_EQ(4, counter.CountTickets(tickets));
-}
-
-TEST(LuckyTicketCounterFalseTest, ShouldTrue) {
-	const unsigned int ticket_length = 6;
-	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Moscow, ticket_length);
-
-	std::vector<std::string> tickets;
-	tickets.push_back("123456");
-	tickets.push_back("23");
-	tickets.push_back("3679323234");
-	tickets.push_back("778323");
-
-	ASSERT_EQ(0, counter.CountTickets(tickets));
-}
-
-TEST(LuckyTicketLengthTest, ShouldTrue) {
-	const unsigned int ticket_length = 6;
-	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Moscow, ticket_length);
-
-	ASSERT_EQ(ticket_length, counter.GetTicketLength());
-}
-
-TEST(LuckyTicketLengthTest2, ShouldTrue) {
-	const unsigned int ticket_length = 6;
-	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Piter, ticket_length);
-
-	ASSERT_EQ(ticket_length, counter.GetTicketLength());
-}
-
-TEST(LuckyTicketCounterPiterTest, ShouldTrue) {
-	const unsigned int ticket_length = 6;
-	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Piter, ticket_length);
-
-	std::vector<std::string> tickets;
-	tickets.push_back("457369");
-	tickets.push_back("143264");
-	tickets.push_back("573144");
-	tickets.push_back("620477");
-
-	ASSERT_EQ(4, counter.CountTickets(tickets));
-}
-
-TEST(LuckyTicketCounterPiterFalseTest, ShouldTrue) {
-	const unsigned int ticket_length = 6;
-	ISXLuckyTickets::LuckyTicketCounter counter(ISXMode::TicketsMode::Piter, ticket_length);
-
-	std::vector<std::string> tickets;
-	tickets.push_back("123456");
-	tickets.push_back("23");
-	tickets.push_back("3679323234");
-	tickets.push_back("778323");
-
-	ASSERT_EQ(0, counter.CountTickets(tickets));
-}

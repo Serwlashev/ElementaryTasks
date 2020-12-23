@@ -10,7 +10,7 @@ void ISXProgramTicket::ProgramTicket::Start(const int& argc, char** argv)
 	bool want_continue = true;
 	std::string ticket = "";
 	std::vector<std::string> tickets;
-	ISXMode::TicketsMode ticket_mode;
+	ISXAnalyzer::TicketsMode ticket_mode;
 
 	if (argc != 2) {
 		ISXTicketView::LuckyTicketView::PrintMessage(m_instruction);
@@ -20,7 +20,7 @@ void ISXProgramTicket::ProgramTicket::Start(const int& argc, char** argv)
 		ticket_mode = ReadAlgorythmFromFile(argv[1]);
 	}
 
-	if (ticket_mode == ISXMode::TicketsMode::Undefined) {
+	if (ticket_mode == ISXAnalyzer::TicketsMode::Undefined) {
 		ISXTicketView::LuckyTicketView::PrintMessage("Cannot find algorythm in the give file");
 		return;
 	}
@@ -30,8 +30,7 @@ void ISXProgramTicket::ProgramTicket::Start(const int& argc, char** argv)
 
 		ticket = ISXTicketView::LuckyTicketView::GetStringValue("Please, enter all digits from ticket\n");
 
-		if (ticket.size() == m_ticket_counter.get()->GetTicketLength() && 
-			ISXTicketParser::TicketParser::IsValid(ticket)) {
+		if (ISXTicketParser::TicketParser::IsValid(ticket)) {
 			tickets.push_back(ticket);
 		}
 		else {
@@ -41,12 +40,12 @@ void ISXProgramTicket::ProgramTicket::Start(const int& argc, char** argv)
 		want_continue = ISXTicketView::LuckyTicketView::WantContinue();
 	}
 
-	ShowCalculatedLuckyTickets(tickets);
+	ISXTicketView::LuckyTicketView::ShowNumberTickets(GetNumLuckyTickets(tickets));
 
 	ISXTicketView::LuckyTicketView::PrintMessage("Goodbay!\n");
 }
 
-ISXMode::TicketsMode ISXProgramTicket::ProgramTicket::ReadAlgorythmFromFile(const std::string& path)
+ISXAnalyzer::TicketsMode ISXProgramTicket::ProgramTicket::ReadAlgorythmFromFile(const std::string& path)
 {
 	std::string temp_str;
 	std::ifstream is(path, std::ios::in | std::ios::binary);
@@ -56,42 +55,41 @@ ISXMode::TicketsMode ISXProgramTicket::ProgramTicket::ReadAlgorythmFromFile(cons
 
 		while (!is.eof()) {
 			is >> temp_str;
-			if (temp_str.compare("Moscow") == 0) {
+			if (temp_str.compare("Moscow") == 0 || temp_str.compare("moscow") == 0) {
 				is.close();
-				return ISXMode::TicketsMode::Moscow;
+				return ISXAnalyzer::TicketsMode::Moscow;
 			}
-			else if (temp_str.compare("Piter") == 0) {
+			else if (temp_str.compare("Piter") == 0 || temp_str.compare("poscow") == 0) {
 				is.close();
-				return ISXMode::TicketsMode::Piter;
+				return ISXAnalyzer::TicketsMode::Piter;
 			}
 		}
 		is.close();
 	}
 
-	return ISXMode::TicketsMode::Undefined;
+	return ISXAnalyzer::TicketsMode::Undefined;
 }
 
-std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> ISXProgramTicket::ProgramTicket::CreateTicketsCounter(ISXMode::TicketsMode mode)
+std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> ISXProgramTicket::ProgramTicket::CreateTicketsCounter(ISXAnalyzer::TicketsMode mode)
 {
 	std::string length_str = ISXTicketView::LuckyTicketView::GetStringValue("Please, enter the length of the ticket. It should be even positive number from 2 to 100\n");
 
 	if (ISXTicketParser::TicketParser::IsValid(length_str)) {
 		unsigned int ticket_length = ISXTicketParser::TicketParser::ParseToUI(length_str);
 
-		std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> counter = std::make_unique<ISXLuckyTickets::LuckyTicketCounter>(mode, ticket_length);
+		std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> counter = ISXTicketFactory::TicketCounterFactory::Create(ISXAnalyzerFactory::TicketAnalyzerFactory::Create(mode, ticket_length));
 
 		return std::move(counter);
 	}
 	return nullptr;
 }
 
-void ISXProgramTicket::ProgramTicket::ShowCalculatedLuckyTickets(const std::vector<std::string>& tickets)
+std::string ISXProgramTicket::ProgramTicket::GetNumLuckyTickets(const std::vector<std::string>& tickets)
 {
 	if (m_ticket_counter) {
-		int count = m_ticket_counter.get()->CountTickets(tickets);
-		ISXTicketView::LuckyTicketView::PrintMessage("You entered " + std::to_string(count) + " lucky tickets\n");
+		return std::to_string(m_ticket_counter.get()->CountTickets(tickets.begin(), tickets.end()));
 	}
 	else {
-		ISXTicketView::LuckyTicketView::PrintMessage("Cannot calculate lucky tickets!\n");
+		return "0";
 	}
 }

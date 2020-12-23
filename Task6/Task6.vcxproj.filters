@@ -18,16 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CountingMode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LuckyTicketCounter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PiterMode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MoscowMode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LuckyTicketView.cpp">
@@ -39,18 +30,24 @@
     <ClCompile Include="ProgramTicket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MoscowAnalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PiterAnalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TicketAnalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TicketAnalyzerFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TicketCounterFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CountingMode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LuckyTicketCounter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PiterMode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MoscowMode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LuckyTicketView.h">
@@ -60,6 +57,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProgramTicket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoscowAnalyzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PiterAnalyzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TicketAnalyzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TicketAnalyzerFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TicketCounterFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

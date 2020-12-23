@@ -18,10 +18,10 @@ namespace ISXApplication
 
 	private:
 		void CountLineOccurences(const std::string& path, const std::string& line);
-		void ReplaceLine(const string& path, const string& search_line, const string& replacing_line);
+		void ReplaceLine(const std::string& path, const std::string& search_line, const std::string& replacing_line);
 		
 		std::unique_ptr<FileParser> parser;
-		string m_instructions;
+		std::string m_instructions;
 	};
 }
 

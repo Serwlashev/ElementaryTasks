@@ -34,3 +34,8 @@ std::string ISXTicketView::LuckyTicketView::GetStringValue(const std::string& me
 
     return str;
 }
+
+void ISXTicketView::LuckyTicketView::ShowNumberTickets(const std::string& num)
+{
+    std::cout << num << " lucky ticket(s) found.\n";
+}

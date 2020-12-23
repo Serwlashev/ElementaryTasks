@@ -33,7 +33,7 @@ void ISXApplication::ParserApplication::CountLineOccurences(const std::string& p
 	}
 }
 
-void ISXApplication::ParserApplication::ReplaceLine(const string& path, const string& search_line, const string& replacing_line)
+void ISXApplication::ParserApplication::ReplaceLine(const std::string& path, const std::string& search_line, const std::string& replacing_line)
 {
 	bool result = parser.get()->ReplaceStringToOther(path, search_line, replacing_line);
 

@@ -19,22 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CountingMode.cpp" />
+    <ClCompile Include="TicketAnalyzer.cpp" />
     <ClCompile Include="LuckyTicketCounter.cpp" />
     <ClCompile Include="LuckyTicketView.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MoscowMode.cpp" />
-    <ClCompile Include="PiterMode.cpp" />
+    <ClCompile Include="MoscowAnalyzer.cpp" />
+    <ClCompile Include="PiterAnalyzer.cpp" />
     <ClCompile Include="ProgramTicket.cpp" />
+    <ClCompile Include="TicketAnalyzerFactory.cpp" />
+    <ClCompile Include="TicketCounterFactory.cpp" />
     <ClCompile Include="TicketParser.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CountingMode.h" />
+    <ClInclude Include="TicketAnalyzer.h" />
     <ClInclude Include="LuckyTicketCounter.h" />
     <ClInclude Include="LuckyTicketView.h" />
-    <ClInclude Include="MoscowMode.h" />
-    <ClInclude Include="PiterMode.h" />
+    <ClInclude Include="MoscowAnalyzer.h" />
+    <ClInclude Include="PiterAnalyzer.h" />
     <ClInclude Include="ProgramTicket.h" />
+    <ClInclude Include="TicketAnalyzerFactory.h" />
+    <ClInclude Include="TicketCounterFactory.h" />
     <ClInclude Include="TicketParser.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

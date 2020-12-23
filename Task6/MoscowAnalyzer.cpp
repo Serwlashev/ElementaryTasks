@@ -1,8 +1,8 @@
-#include "MoscowMode.h"
+#include "MoscowAnalyzer.h"
 
-ISXMoscowMode::MoscowMode::MoscowMode(const unsigned int& ticket_length) : ISXMode::CountingMode(ticket_length) { }
+ISXMoscowAnalyzer::MoscowAnalyzer::MoscowAnalyzer(const unsigned int& ticket_length) : ISXAnalyzer::TicketAnalyzer(ticket_length) { }
 
-bool ISXMoscowMode::MoscowMode::IsLuckyTicket(const std::string& ticket) const
+bool ISXMoscowAnalyzer::MoscowAnalyzer::IsLuckyTicket(const std::string& ticket) const
 {
 	if (ticket.size() != m_ticket_length) {
 		return false;

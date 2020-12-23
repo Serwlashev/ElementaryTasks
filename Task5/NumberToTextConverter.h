@@ -17,7 +17,7 @@ namespace ISXNumberConverter
 			BILLION = 1000000000,
 			MILLION = 1000000,
 			THOUSAND = 1000,
-			HUNDRED = 100,
+			BORDER_100 = 100,
 		};
 
 		void InitLibrary();

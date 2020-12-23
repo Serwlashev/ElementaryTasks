@@ -69,10 +69,10 @@ std::string ISXNumberConverter::NumberToTextConverter::ConvertFromThreeDigits(in
 {
 	std::string result = "";
 
-	if (number >= HUNDRED) {	// First of all we should separate handreds from number
-		result.append(m_library.at(number / HUNDRED) + " ");
-		result.append(m_library.at(HUNDRED) + " ");
-		number %= HUNDRED;
+	if (number >= BORDER_100) {	// First of all we should separate handreds from number
+		result.append(m_library.at(number / BORDER_100) + " ");
+		result.append(m_library.at(BORDER_100) + " ");
+		number %= BORDER_100;
 	}
 	if (number > 20) {			// If number has dozens we separate them
 		result.append(m_library.at((number / 10) * 10) + " ");

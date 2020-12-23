@@ -10,6 +10,7 @@ namespace ISXTicketView
 		static bool WantContinue();
 		static void PrintMessage(const std::string& message);
 		static std::string GetStringValue(const std::string& message);
+		static void ShowNumberTickets(const std::string& num);
 	};
 }
 

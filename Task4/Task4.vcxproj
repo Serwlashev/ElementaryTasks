@@ -145,11 +145,13 @@
     <ClCompile Include="FileParserView.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParserApplication.cpp" />
+    <ClCompile Include="ReplacerForString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileParser.h" />
     <ClInclude Include="FileParserView.h" />
     <ClInclude Include="ParserApplication.h" />
+    <ClInclude Include="ReplacerForString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

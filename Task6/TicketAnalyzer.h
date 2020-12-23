@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-namespace ISXMode
+namespace ISXAnalyzer
 {
 	enum class TicketsMode {
 		Undefined,
@@ -9,10 +9,10 @@ namespace ISXMode
 		Moscow
 	};
 
-	class CountingMode
+	class TicketAnalyzer
 	{
 	public:
-		CountingMode(const unsigned int& ticket_length);
+		TicketAnalyzer(const unsigned int& ticket_length);
 		virtual bool IsLuckyTicket(const std::string& ticket) const = 0;
 		unsigned int GetTicketLength() const;
 	protected:

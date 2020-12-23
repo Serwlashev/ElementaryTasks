@@ -99,7 +99,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>..\Task8\Debug;..\Task7\Debug;..\Task6\Debug;..\Task5\Debug;..\Task4\Debug;..\Task3\Debug;..\Task2\Debug;..\Task1\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Cell.obj;Field.obj;Application.obj;ChessboardParser.obj;ConsoleManager.obj;Chessboard.obj;ChessboardFactorycpp.obj;NumberConverter.obj;NumberToTextConverter.obj;Parser.obj;PiterMode.obj;MoscowMode.obj;LuckyTicketCounter.obj;CountingMode.obj;TicketParser.obj;EnvelopeParser.obj;Envelope.obj;Generator.obj;ParserPow.obj;ProgramPow.obj;ProgramFibonacci.obj;ParserFibonacci.obj;FibonacciGenerator.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Cell.obj;Field.obj;Application.obj;ChessboardParser.obj;ConsoleManager.obj;Chessboard.obj;ChessboardFactorycpp.obj;NumberConverter.obj;NumberToTextConverter.obj;Parser.obj;PiterAnalyzer.obj;MoscowAnalyzer.obj;LuckyTicketCounter.obj;TicketAnalyzer.obj;TicketParser.obj;EnvelopeParser.obj;Envelope.obj;Generator.obj;ParserPow.obj;ProgramPow.obj;ProgramFibonacci.obj;ParserFibonacci.obj;FibonacciGenerator.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

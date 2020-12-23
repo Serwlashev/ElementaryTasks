@@ -8,6 +8,8 @@
 #include "LuckyTicketCounter.h"
 #include "LuckyTicketView.h"
 #include "TicketParser.h"
+#include "TicketCounterFactory.h"
+#include "TicketAnalyzerFactory.h"
 
 namespace ISXProgramTicket
 {
@@ -17,11 +19,11 @@ namespace ISXProgramTicket
 		ProgramTicket();
 
 		void Start(const int& argc, char** argv1);
+		std::string GetNumLuckyTickets(const std::vector<std::string>& tickets);
 
 	private:
-		ISXMode::TicketsMode ReadAlgorythmFromFile(const std::string& path);
-		std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> CreateTicketsCounter(ISXMode::TicketsMode mode);
-		void ShowCalculatedLuckyTickets(const std::vector<std::string>& tickets);
+		std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> CreateTicketsCounter(ISXAnalyzer::TicketsMode mode);
+		ISXAnalyzer::TicketsMode ReadAlgorythmFromFile(const std::string& path);
 
 		std::unique_ptr<ISXLuckyTickets::LuckyTicketCounter> m_ticket_counter;
 		std::string m_instruction;
