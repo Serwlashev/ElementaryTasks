@@ -10,9 +10,9 @@ ISXTriangle::Triangle::Triangle(const std::string& name, double first_side, doub
 
 double ISXTriangle::Triangle::GetSquare() const
 {
-    double perimeter = (m_first_side + m_second_side + m_third_side) / 2;
+    double semi_perimeter = (m_first_side + m_second_side + m_third_side) / 2;
     
-    return std::sqrt(perimeter * (perimeter - m_first_side) * (perimeter - m_second_side) * (perimeter - m_third_side));
+    return std::sqrt(semi_perimeter * (semi_perimeter - m_first_side) * (semi_perimeter - m_second_side) * (semi_perimeter - m_third_side));
 }
 
 std::string ISXTriangle::Triangle::GetName() const

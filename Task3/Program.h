@@ -2,9 +2,9 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <algorithm>
 
 #include "Triangle.h"
-#include <algorithm>
 #include "ViewTriangle.h"
 #include "TriangleParser.h"
 

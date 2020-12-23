@@ -21,13 +21,13 @@
     <ClCompile Include="Triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Programm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TriangleParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ViewTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,13 +35,13 @@
     <ClInclude Include="Triangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Programm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TriangleParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ViewTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Program.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

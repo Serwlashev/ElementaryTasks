@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "Programm.h"
+#include "Program.h"
 
 int main(int argc, char* argv[]) {
-	ISXProg::TriangleStorage programm;
+	ISXProg::TriangleStorage program;
 
-	programm.Start(argc, argv);
+	program.Start(argc, argv);
 
 	system("pause");
 	return 0;

@@ -44,12 +44,6 @@
     <ClCompile Include="task6_lucky-tickets_test.cpp" />
     <ClCompile Include="task7_numbers_pow_test.cpp" />
     <ClCompile Include="task8_fibonacci_test.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -100,7 +94,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>..\Task8\Debug;..\Task7\Debug;..\Task6\Debug;..\Task5\Debug;..\Task4\Debug;..\Task3\Debug;..\Task2\Debug;..\Task1\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Cell.obj;Field.obj;Application.obj;ChessboardParser.obj;ConsoleManager.obj;Chessboard.obj;ChessboardFactorycpp.obj;NumberConverter.obj;NumberToTextConverter.obj;Parser.obj;PiterAnalyzer.obj;MoscowAnalyzer.obj;LuckyTicketCounter.obj;TicketAnalyzer.obj;TicketParser.obj;EnvelopeParser.obj;Envelope.obj;Generator.obj;ParserPow.obj;ProgramPow.obj;ProgramFibonacci.obj;ParserFibonacci.obj;FibonacciGenerator.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Cell.obj;Field.obj;Application.obj;ChessboardParser.obj;ConsoleManager.obj;Chessboard.obj;ChessboardFactorycpp.obj;NumberConverter.obj;NumberToTextConverter.obj;Parser.obj;PiterAnalyzer.obj;MoscowAnalyzer.obj;LuckyTicketCounter.obj;TicketAnalyzer.obj;TicketParser.obj;EnvelopeParser.obj;Envelope.obj;Generator.obj;ParserPow.obj;ProgramPow.obj;ProgramFibonacci.obj;ParserFibonacci.obj;FibonacciGenerator.obj;TriangleParser.obj;Triangle.obj;Programm.obj;ReplacerForString.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

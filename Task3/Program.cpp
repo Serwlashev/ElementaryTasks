@@ -1,4 +1,4 @@
-#include "Programm.h"
+#include "Program.h"
 
 ISXProg::TriangleStorage::TriangleStorage()
 {
