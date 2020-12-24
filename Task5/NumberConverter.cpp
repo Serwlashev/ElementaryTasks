@@ -35,7 +35,7 @@ std::string ISXConverter::NumberConverter::ConvertNumberToText(const std::string
 		}
 	}
 	else {
-		text_number = "You passed wrong number!";
+		text_number = "You passed the wrong ticket!";
 	}
 
 	return text_number;

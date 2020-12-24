@@ -17,7 +17,7 @@ namespace ISXApplication {
     private:
         const int num_required_params = 3;
 
-        void PrintField() const;
+        void SendFieldToPrinting() const;
     
         std::unique_ptr<ISXField::Field> m_field;
         ISXBoardFactory::ChessboardFactory m_board_creator;
