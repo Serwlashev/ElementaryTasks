@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <iterator>
+#include <memory>
 
 #include "MoscowAnalyzer.h"
 #include "PiterAnalyzer.h"

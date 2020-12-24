@@ -35,8 +35,8 @@ bool ISXParse::FileParser::ReplaceStringToOther(const std::string& path, const s
 
 	if (old_name != "" && temp__file_path != "" && RenameFileToDefault(path, temp__file_path)) {
 
-		std::ofstream readable_file(path, std::ios::out, std::ios::binary);
-		std::ifstream recordable_file(temp__file_path, std::ios::in, std::ios::binary);
+		std::ofstream readable_file = std::ofstream(path, std::ios::out, std::ios::binary);
+		std::ifstream recordable_file = std::ifstream(temp__file_path, std::ios::in, std::ios::binary);
 		std::string buffer = "";
 
 		if (readable_file.is_open() && recordable_file.is_open() && replacer) {

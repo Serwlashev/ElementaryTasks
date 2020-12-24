@@ -3,6 +3,8 @@
 #include <string>
 #include <map>
 #include <list>
+#include <memory>
+#include <cmath>
 
 namespace ISXNumberConverter
 {
