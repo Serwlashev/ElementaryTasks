@@ -219,7 +219,7 @@ TEST(NumberConverterTest4, ShouldTrue) {
 TEST(NumberConverterWrongParamTest1, ShouldTrue) {
 	const int argc = 2;
 	char* argv[argc] = { "path", "1000dfd001" };
-	std::string result_number = "You passed wrong number!";
+	std::string result_number = "You passed the wrong ticket!";
 
 	ISXConverter::NumberConverter converter;
 
@@ -229,7 +229,7 @@ TEST(NumberConverterWrongParamTest1, ShouldTrue) {
 TEST(NumberConverterWrongParamTest2, ShouldTrue) {
 	const int argc = 2;
 	char* argv[argc] = { "path", "uiu" };
-	std::string result_number = "You passed wrong number!";
+	std::string result_number = "You passed the wrong ticket!";
 
 	ISXConverter::NumberConverter converter;
 
@@ -239,7 +239,7 @@ TEST(NumberConverterWrongParamTest2, ShouldTrue) {
 TEST(NumberConverterWrongParamTest3, ShouldTrue) {
 	const int argc = 2;
 	char* argv[argc] = { "path", "-8888888886766" };
-	std::string result_number = "You passed wrong number!";
+	std::string result_number = "You passed the wrong ticket!";
 
 	ISXConverter::NumberConverter converter;
 
@@ -249,7 +249,7 @@ TEST(NumberConverterWrongParamTest3, ShouldTrue) {
 TEST(NumberConverterWrongParamTest4, ShouldTrue) {
 	const int argc = 2;
 	char* argv[argc] = { "path", "2234242342342343244" };
-	std::string result_number = "You passed wrong number!";
+	std::string result_number = "You passed the wrong ticket!";
 
 	ISXConverter::NumberConverter converter;
 
@@ -259,7 +259,7 @@ TEST(NumberConverterWrongParamTest4, ShouldTrue) {
 TEST(NumberConverterWrongParamTest5, ShouldTrue) {
 	const int argc = 2;
 	char* argv[argc] = { "path", "-23423.3" };
-	std::string result_number = "You passed wrong number!";
+	std::string result_number = "You passed the wrong ticket!";
 
 	ISXConverter::NumberConverter converter;
 
@@ -269,7 +269,7 @@ TEST(NumberConverterWrongParamTest5, ShouldTrue) {
 TEST(NumberConverterWrongParamTest6, ShouldTrue) {
 	const int argc = 2;
 	char* argv[argc] = { "path", "0.0" };
-	std::string result_number = "You passed wrong number!";
+	std::string result_number = "You passed the wrong ticket!";
 
 	ISXConverter::NumberConverter converter;
 
